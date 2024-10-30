@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Designer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#home">// home</a></li>
+                <li><a href="#expertise">// about me</a></li>
+                <li><a href="#projects">// projects</a></li>
+                <li><a href="#experience">// experience</a></li>
+                <li><a href="#contact">// contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   
+    <section id="home">
+        <div class="overlay">
+            <h1>ANASTASIA HINTON</h1>
+            <p>Game Designer + Developer, passionate about creating engaging and immersive experiences.</p>
+        </div>
+        <div id="scrollArrow">↓</div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="content-section">
+        <h2>Expertise</h2>
+        <ul>
+            <li>Unreal Engine + Blueprint Scripting</li>
+            <li>3D Modeling (Maya, Substance Painter)</li>
+            <li>Character Design + Animation</li>
+            <li>UI/UX Design for Games</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="content-section">
+        <h2>Projects</h2>
+        <article>
+            <h3>Third-Person Platformer</h3>
+            <p>Retrieve lost stars, unlock buffs, and avoid enemies in a low-gravity world.</p>
+        </article>
+        <article>
+            <h3>Super Soul Internship</h3>
+            <p>Contributed to character designs and UI elements for an indie project.</p>
+        </article>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="content-section">
+        <h2>Experience</h2>
+        <ul>
+            <li><strong>Super Soul - Game Design Intern</strong> (Summer 2024)</li>
+            <li><strong>Freelance Game Development</strong> (Ongoing)</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section">
+        <h2>Contact</h2>
+        <p>I'm always open to new opportunities! Reach me at:</p>
+        <ul>
+            <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+            <li>LinkedIn: <a href="https://linkedin.com/in/your-profile">linkedin.com/in/your-profile</a></li>
+        </ul>
+    </section>
+
+    
+    <script>
+        const navbar = document.getElementById('navbar');
+        const homeSection = document.getElementById('home');
+        const navbarHeight = navbar.offsetHeight;
+
+        // Listen for scroll events to make navbar sticky after passing the home section
+        window.addEventListener('scroll', () => {
+            const homeBottom = homeSection.getBoundingClientRect().bottom;
+
+            if (homeBottom - navbarHeight <= 0) {
+                navbar.classList.add('sticky');
+            } else {
+                navbar.classList.remove('sticky');
+            }
+        });
+
+        // Scroll arrow logic
+        const scrollArrow = document.getElementById('scrollArrow');
+
+        window.addEventListener('scroll', () => {
+            scrollArrow.style.opacity = window.scrollY > 50 ? '0' : '1';
+        });
+
+        scrollArrow.addEventListener('click', () => {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+</body>
+</html>
