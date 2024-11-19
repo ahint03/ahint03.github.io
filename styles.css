@@ -114,25 +114,137 @@ h2 {
     margin-bottom: 20px; /* Space below the image */
 }
 
-.navigation-arrows {
+/* title Section */
+.title-section {
+    text-align: center;
+    background: url('images/stars-bg.jpg') no-repeat center center / cover;
+    padding: 150px 20px;
+    color: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+}
+
+.title-section h1 {
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.title-section p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Angled Section */
+.angled-section {
     display: flex;
-    justify-content: space-between; /* Space arrows evenly */
-    margin-top: 20px; /* Space above the arrows */
+    align-items: center;
+    justify-content: space-around;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #282c35 50%, #1e1e28 50%);
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+    position: relative;
+    overflow: hidden;
 }
 
-.arrow {
-    text-decoration: none;
-    color: white; /* Arrow color */
-    font-size: 1.5rem; /* Arrow size */
-    padding: 10px 20px; /* Space around text */
-    background-color: #2a2a2a; /* Background color for arrows */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth background color transition */
+.angled-section .content {
+    flex: 1;
+    padding-right: 20px;
 }
 
-.arrow:hover {
-    background-color: #3d444c; /* Change color on hover */
+.angled-section .content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #06b6d4;
 }
+
+.angled-section .content p {
+    font-size: 1.2rem;
+    color: #ddd;
+    line-height: 1.8;
+}
+
+.angled-section .image {
+    flex: 1;
+    text-align: center;
+}
+
+.angled-section .image img {
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Media Section */
+.media-section {
+    text-align: center;
+    padding: 80px 20px;
+    background: #282c35;
+	padding-bottom: 40px;
+}
+
+.media-section h2 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: #06b6d4;
+}
+
+/* Flexbox Layout for Media */
+.media-grid {
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    gap: 40px; /* Space between the iframes */
+    align-items: center; /* Vertically align the iframes */
+}
+
+/* First Media (Smaller) */
+.media-grid iframe:first-of-type {
+    width: 45%; /* Adjust width for the first iframe */
+    height: 80vh; /* Set height */
+    max-width: 800px; /* Set max width */
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Second Media (Larger) */
+.media-grid iframe:last-of-type {
+    width: 55%; /* Adjust width for the second iframe */
+    height: 80vh; /* Set height */
+    max-width: 1000px; /* Set max width */
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Subtle Floating Animations */
+.title-section::after,
+.angled-section::after {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, rgba(6, 182, 212, 0) 70%);
+    top: -30%;
+    left: -30%;
+    animation: float 10s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
 /* Navbar */
 nav {
     background-color: rgba(0, 0, 0, 0.0); /* Slight transparency */
@@ -243,3 +355,145 @@ h2 {
 article {
     margin-bottom: 30px;
 }
+
+#art-hero { 
+	position: relative; 
+	height: 70vh; background: url('images/art-hero.jpg') no-repeat center center / cover; 
+	display: flex; 
+	justify-content: center; 
+	align-items: center; 
+}
+#art-hero .overlay { 
+	width: 60%; 
+	background-color: rgba(0, 0, 0, 0.7); 
+	padding: 30px; 
+	border-radius: 10px; 
+	text-align: center; 
+	color: white; 
+} 
+#art-hero .overlay h1 { 
+	font-size: 4rem; 
+	margin-bottom: 15px; 
+} 
+#art-hero .overlay p { 
+	font-size: 1.2rem; 
+} 
+/* Gallery Section */ 
+.gallery-container { 
+	display: flex; 
+	flex-wrap: wrap; 
+	justify-content: center; 
+	gap: 20px; padding: 20px; 
+} 
+.gallery-item 
+{ background-color: #2a2a2a; 
+	border-radius: 10px; 
+	overflow: hidden; 
+	width: 250px; 
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+	transition: transform 0.3s ease, box-shadow 0.3s ease; 
+	text-align: center; 
+} 
+.gallery-item:hover {
+	transform: scale(1.05); 
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); 
+} 
+.gallery-item img { 
+	width: 100%; 
+	height: auto;
+	border-bottom: 1px solid #444; 
+} 
+.gallery-item p 
+{ padding: 10px; 
+	color: #ccc; 
+	font-size: 1rem;
+}  
+
+
+/* Navigation Arrows */
+.navigation-arrows {
+    display: flex;
+    justify-content: space-between;
+	background-color: #282c35;
+	padding-bottom: 20px;
+}
+
+.arrow {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    background-color: #06b6d4;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.arrow:hover {
+    background-color: #048ea4;
+    transform: translateY(-3px);
+}
+
+/* Modeling */
+#modeling h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.modeling-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.modeling-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+}
+
+.modeling-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.modeling-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.modeling-item p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Embeds and Additional Images */
+.modeling-embeds {
+    margin-top: 10px;
+}
+
+.modeling-embeds iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.modeling-embeds img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
