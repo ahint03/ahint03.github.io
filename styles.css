@@ -356,11 +356,10 @@ article {
 }
 
 #art-hero { 
-	position: relative; 
-	height: 70vh; background: url('images/weather.png') no-repeat center center / cover; 
-	display: flex; 
-	justify-content: center; 
-	align-items: center; 
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('images/weather.png') no-repeat center center / cover;
 }
 #art-hero .overlay { 
 	width: 60%; 
