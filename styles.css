@@ -378,27 +378,28 @@ article {
 	font-size: 1.2rem; 
 } 
 /* Gallery Section */ 
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
 .gallery-item {
-    background-color: #2a2a2a;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 350px; /* Increased width */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
+    flex: 1 1 calc(30% - 20px); /* Adjust size of each item */
+    max-width: calc(30% - 20px);
+    box-sizing: border-box;
+    cursor: pointer;
 }
 
-/* Ensure Images Scale Proportionally */
 .gallery-item img {
-    width: 100%; /* Ensures image takes full width of the container */
-    height: auto; /* Maintains aspect ratio */
-    border-bottom: 1px solid #444;
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
 }
 
-/* Hover Effect */
-.gallery-item:hover {
+.gallery-item img:hover {
     transform: scale(1.05);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -488,7 +489,7 @@ article {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Modal styling */
+/* Modal Styles */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -497,41 +498,37 @@ article {
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.9); /* Black with opacity */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
 }
 
 .modal-content {
     display: block;
-    margin: auto;
-    max-width: 90%;
-    max-height: 90%;
+    margin: 5% auto;
+    max-width: 80%;
+    max-height: 80%;
     border-radius: 10px;
 }
 
 #modalCaption {
     text-align: center;
-    color: #ccc;
-    padding: 10px 0;
+    color: #fff;
+    margin-top: 10px;
     font-size: 1.2rem;
 }
 
 .close {
     position: absolute;
-    top: 15px;
-    right: 35px;
+    top: 10px;
+    right: 25px;
     color: #fff;
     font-size: 2rem;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: color 0.2s;
 }
 
-.close:hover,
-.close:focus {
+.close:hover {
     color: #f00;
-    text-decoration: none;
-    cursor: pointer;
 }
 
 
