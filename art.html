@@ -117,10 +117,10 @@
 	</section>
 	<!-- Modal for Enlarged Images -->
 <div id="imageModal" class="modal" onclick="closeModal()">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImage">
-    <p id="modalCaption"></p>
-</div>
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <p id="modalCaption"></p>
+    </div>
 	
 <script>
 	function openModal(imageElement) {
@@ -130,9 +130,10 @@
 
     modal.style.display = 'block';
     modalImg.src = imageElement.src;
-    modalCaption.innerHTML = imageElement.nextElementSibling.textContent;
+    modalCaption.textContent = imageElement.alt;
 }
 
+// Close the modal
 function closeModal() {
     const modal = document.getElementById('imageModal');
     modal.style.display = 'none';
