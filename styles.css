@@ -379,35 +379,28 @@ article {
 	font-size: 1.2rem; 
 } 
 /* Gallery Section */ 
-.gallery-container { 
-	display: flex; 
-	flex-wrap: wrap; 
-	justify-content: center; 
-	gap: 20px; padding: 20px; 
-} 
-.gallery-item 
-{ background-color: #2a2a2a; 
-	border-radius: 10px; 
-	overflow: hidden; 
-	width: 250px; 
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
-	transition: transform 0.3s ease, box-shadow 0.3s ease; 
-	text-align: center; 
-} 
+.gallery-item {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 350px; /* Increased width */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+/* Ensure Images Scale Proportionally */
+.gallery-item img {
+    width: 100%; /* Ensures image takes full width of the container */
+    height: auto; /* Maintains aspect ratio */
+    border-bottom: 1px solid #444;
+}
+
+/* Hover Effect */
 .gallery-item:hover {
-	transform: scale(1.05); 
-	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); 
-} 
-.gallery-item img { 
-	width: 100%; 
-	height: auto;
-	border-bottom: 1px solid #444; 
-} 
-.gallery-item p 
-{ padding: 10px; 
-	color: #ccc; 
-	font-size: 1rem;
-}  
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
 
 
 /* Navigation Arrows */
@@ -494,6 +487,52 @@ article {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* On top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.9); /* Black with opacity */
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+#modalCaption {
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    font-size: 1.2rem;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #f00;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 
