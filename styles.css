@@ -222,7 +222,6 @@ h2 {
 }
 
 
-
 /* Subtle Floating Animations */
 .title-section::after,
 .angled-section::after {
@@ -358,7 +357,7 @@ article {
 
 #art-hero { 
 	position: relative; 
-	height: 70vh; background: url('images/art-hero.jpg') no-repeat center center / cover; 
+	height: 70vh; background: url('images/weather.png') no-repeat center center / cover; 
 	display: flex; 
 	justify-content: center; 
 	align-items: center; 
