@@ -357,7 +357,7 @@ article {
 
 #art-hero { 
     position: relative;
-    height: 80vh;
+    height: 70vh;
     width: 100%;
     background: url('images/weather.png') no-repeat center center / cover;
 }
