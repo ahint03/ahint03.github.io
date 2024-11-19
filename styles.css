@@ -362,12 +362,8 @@ article {
     background: url('images/weather.png') no-repeat center center / cover;
 }
 #art-hero .overlay { 
-	width: 60%; 
-	background-color: rgba(0, 0, 0, 0.7); 
-	padding: 30px; 
-	border-radius: 10px; 
 	text-align: center; 
-	color: white; 
+	color: black; 
 } 
 #art-hero .overlay h1 { 
 	font-size: 4rem; 
