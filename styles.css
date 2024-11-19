@@ -366,11 +366,15 @@ article {
 	color: black; 
 } 
 #art-hero .overlayy h1 { 
+	text-align: center;
 	font-size: 4rem; 
 	margin-bottom: 15px; 
+	color: black;
 } 
 #art-hero .overlayy p { 
+	text-align: center;
 	font-size: 1.2rem; 
+	color: black;
 } 
 /* Gallery Section */ 
 .gallery-container {
