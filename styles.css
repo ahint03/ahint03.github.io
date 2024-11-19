@@ -361,15 +361,15 @@ article {
     width: 100%;
     background: url('images/weather.png') no-repeat center center / cover;
 }
-#art-hero .overlay { 
+#art-hero .overlayy { 
 	text-align: center; 
 	color: black; 
 } 
-#art-hero .overlay h1 { 
+#art-hero .overlayy h1 { 
 	font-size: 4rem; 
 	margin-bottom: 15px; 
 } 
-#art-hero .overlay p { 
+#art-hero .overlayy p { 
 	font-size: 1.2rem; 
 } 
 /* Gallery Section */ 
