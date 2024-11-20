@@ -411,7 +411,7 @@ article {
     display: flex;
     justify-content: space-between;
 	background-color: #282c35;
-	padding-bottom: 20px;
+	padding: 20px;
 }
 
 .arrow {
