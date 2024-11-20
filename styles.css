@@ -367,7 +367,7 @@ article {
 } 
 #art-hero .overlayy h1 { 
 	padding-top: 280px;
-	padding-right: 10px;
+	padding-right: 15px;
 	text-align: center;
 	font-size: 4rem; 
 	margin-bottom: 15px; 
@@ -375,7 +375,7 @@ article {
 } 
 #art-hero .overlayy p {
 	padding-top: 15px;
-	padding-right: 10px;
+	padding-right: 15px;
 	text-align: center;
 	font-size: 1.2rem; 
 	color: black;
