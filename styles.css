@@ -184,7 +184,7 @@ h2 {
     text-align: center;
     padding: 80px 20px;
     background: #282c35;
-	padding-bottom: 40px;
+    padding-bottom: 40px;
 }
 
 .media-section h2 {
@@ -196,26 +196,17 @@ h2 {
 /* Flexbox Layout for Media */
 .media-grid {
     display: flex;
-    justify-content: center; /* Center the items horizontally */
-    gap: 40px; /* Space between the iframes */
-    align-items: center; /* Vertically align the iframes */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center the items horizontally */
+    gap: 20px; /* Space between the iframes */
+    padding: 20px;
 }
 
-/* First Media (Smaller) */
-.media-grid iframe:first-of-type {
-    width: 45%; /* Adjust width for the first iframe */
-    height: 80vh; /* Set height */
-    max-width: 800px; /* Set max width */
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-}
-
-/* Second Media (Larger) */
-.media-grid iframe:last-of-type {
-    width: 55%; /* Adjust width for the second iframe */
-    height: 80vh; /* Set height */
-    max-width: 1000px; /* Set max width */
+/* Shared Media Styles */
+.media-grid iframe {
+    width: 100%; /* Make iframes responsive */
+    max-width: 800px; /* Set a maximum width for the iframes */
+    height: auto; /* Maintain aspect ratio */
     border: none;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
