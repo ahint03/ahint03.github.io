@@ -719,8 +719,13 @@ nav.sticky {
 .gallery-item img {
   width: 300px;
   height: 300px;
-  object-fit: cover;      /* crops to fill the square */
+  object-fit: cover;
   display: block;
+
+  /* Improves perceived sharpness */
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: high-quality;
 }
 
 .modal-content {
@@ -734,4 +739,5 @@ nav.sticky {
   image-rendering: auto;
   image-rendering: high-quality;
 }
+
 
