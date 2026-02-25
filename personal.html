@@ -1,37 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Personal Projects | Anastasia Hinton</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Work | Anastasia Hinton</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
 <header>
-<nav id="navbar">
-<ul>
-<li><a href="index.html#home">// home</a></li>
-<li><a href="index.html#about">// about</a></li>
-<li><a href="index.html#projects">// projects</a></li>
-<li><a href="index.html#contact">// contact</a></li>
-</ul>
-</nav>
+  <nav id="navbar">
+    <ul>
+      <li><a href="index.html#home">// home</a></li>
+      <li><a href="index.html#aboutme">// about me</a></li>
+      <li><a href="index.html#projects">// projects</a></li>
+      <li><a href="index.html#experience">// experience</a></li>
+      <li><a href="index.html#contact">// contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-<section class="content-section">
-<h2>Personal Projects</h2>
-
-<div class="gallery-container">
-
-<img src="images/stilllife.png" alt="Still Life">
-<img src="images/bw.jpg" alt="Black and White Still Life">
-<img src="images/spider.png" alt="Spider Illustration">
-<img src="images/bun.png" alt="Halloween Bunny">
-
-</div>
+<section id="art-hero" class="hero-personal">
+  <div class="overlayy">
+    <h1>Personal Work</h1>
+    <p>Illustrations, studies, and experimentation.</p>
+    <p>Click any image to enlarge.</p>
+  </div>
 </section>
+
+<section id="gallery" class="content-section">
+  <h2>Gallery</h2>
+  <div class="gallery-container">
+
+    <div class="gallery-item">
+      <img src="images/pfp.png" alt="Self Portrait" onclick="openModal(this)">
+      <p>Self Portrait</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="images/bloodyhand.png" alt="Bloodied Hand" onclick="openModal(this)">
+      <p>Bloodied Hand</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="images/heart.png" alt="Winged Heart" onclick="openModal(this)">
+      <p>Winged Heart</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="images/tatoo.png" alt="Sea and the Stars" onclick="openModal(this)">
+      <p>Sea and the Stars</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="images/spider.png" alt="Spider" onclick="openModal(this)">
+      <p>Spider</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="images/bun.png" alt="Halloween Bunny" onclick="openModal(this)">
+      <p>Halloween Bunny</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="images/mush.png" alt="Mushroom Landscape" onclick="openModal(this)">
+      <p>Mushroom Landscape</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="images/landscape.png" alt="Landscape" onclick="openModal(this)">
+      <p>Landscape</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="images/stilllife.png" alt="Still Life" onclick="openModal(this)">
+      <p>Still Life</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="images/vamp.png" alt="Red Night" onclick="openModal(this)">
+      <p>Red Night</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="images/bw.jpg" alt="Still Life in Black and White" onclick="openModal(this)">
+      <p>Still Life in Black and White</p>
+    </div>
+
+  </div>
+</section>
+
+<div id="imageModal" class="modal" onclick="closeModal()">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImage">
+  <p id="modalCaption"></p>
+</div>
+
+<script>
+function openModal(imageElement) {
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  const modalCaption = document.getElementById('modalCaption');
+
+  modal.style.display = 'block';
+  modalImg.src = imageElement.src;
+  modalCaption.textContent = imageElement.alt;
+}
+
+function closeModal() {
+  const modal = document.getElementById('imageModal');
+  modal.style.display = 'none';
+}
+</script>
 
 </body>
 </html>
