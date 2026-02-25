@@ -707,3 +707,28 @@ nav.sticky {
     max-width: 150px;
 }
 
+/* ===================================== */
+/* UNIFORM THUMBNAILS (ALL ART PAGES)     */
+/* ===================================== */
+
+.gallery-item {
+  flex: 0 0 150px;
+  max-width: 150px;
+}
+
+.gallery-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;      /* crops to fill the square */
+  display: block;
+}
+
+.modal-content {
+  width: min(900px, 90vw);    /* consistent width cap */
+  height: 70vh;               /* consistent height */
+  object-fit: contain;        /* show whole image without cropping */
+  margin: 5vh auto 10px auto;
+  background: rgba(0,0,0,0.25); /* makes small images feel intentional */
+}
+
+
