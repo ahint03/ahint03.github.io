@@ -52,7 +52,32 @@ header {
 #navbar a:hover {
     color: #c9a227;
 }
+/* =========================
+   ABOUT SECTION
+========================= */
 
+.about-section {
+    background-color: #161616;
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-text {
+    max-width: 750px;
+    text-align: center;
+}
+
+.about-text p {
+    margin-bottom: 25px;
+    font-size: 17px;
+    color: #dddddd;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+}
 /* =========================
    PAGE SECTIONS
 ========================= */
@@ -206,3 +231,4 @@ header {
         font-size: 40px;
     }
 }
+
