@@ -1,145 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Gallery</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Art Portfolio | Anastasia Hinton</title>
+<link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <!-- Navigation Bar -->
-    <header>
-    <nav id="navbar">
-        <ul>
-            <li><a href="index.html#home">// home</a></li>
-            <li><a href="index.html#aboutme">// about me</a></li>
-            <li><a href="index.html#projects">// projects</a></li>
-            <li><a href="index.html#experience">// experience</a></li>
-            <li><a href="index.html#contact">// contact</a></li>
-        </ul>
-    </nav>
+
+<header>
+<nav id="navbar">
+<ul>
+<li><a href="index.html#home">// home</a></li>
+<li><a href="index.html#about">// about</a></li>
+<li><a href="index.html#projects">// projects</a></li>
+<li><a href="index.html#contact">// contact</a></li>
+</ul>
+</nav>
 </header>
 
+<section class="content-section">
+<h2>Art Portfolio</h2>
 
-	<!-- Hero Section --> 
-	<section id="art-hero"> 
-		<div class="overlayy"> 
-			<h1>Art Portfolio</h1> 
-			<p>Explore a collection of digital illustrations!</p>
-			<p>Click on any image to make it bigger.</p>
-		</div> 
-	</section> 
-	<!-- Gallery Section --> 
-	<section id="gallery" class="content-section"> 
-		<h2>Gallery</h2> 
-		<div class="gallery-container"> 
-			<div class="gallery-item"> 
-				<img src="images/sheriff.jpg" alt="Peacock Sheriff" onclick="openModal(this)"> 
-				<p>Title: "Peacock Sheriff"</p> 
-			</div> 
-			<div class="gallery-item"> 
-				<img src="images/coatl.png" alt="Coatl" onclick="openModal(this)"> 
-				<p>Title: "Coatl"</p> 
-			</div> 
-			<div class="gallery-item"> 
-				<img src="images/char.png" alt="Character Design" onclick="openModal(this)"> 
-				<p>Title: "Character Design (in progress)"</p> 
-			</div> 
-			<div class="gallery-item"> 
-				<img src="images/icon1.png" alt="Artemis Icon" onclick="openModal(this)"> 
-				<p>Title: "Artemis Icon"</p> 
-			</div> 
-			<div class="gallery-item"> 
-				<img src="images/icon2.png" alt="Maat Icon" onclick="openModal(this)"> 
-				<p>Title: "Maat Icon"</p> 
-			</div> 
-			<div class="gallery-item"> 
-				<img src="images/icon3.png" alt="Nemesis Icon" onclick="openModal(this)"> 
-				<p>Title: "Nemesis Icon"</p> 
-			</div> 
-			<div class="gallery-item"> 
-				<img src="images/pfp.png" alt="Self Portrait" onclick="openModal(this)"> 
-				<p>Title: "Self Portrait"</p> 
-			</div> 
-			 
-			<div class="gallery-item"> 
-				<img src="images/UI.png" alt="Settings" onclick="openModal(this)"> 
-				<p>Title: "Settings"</p> 
-			</div>
-			<div class="gallery-item"> 
-				<img src="images/bloodyhand.png" alt="Bloodied Hand" onclick="openModal(this)"> 
-				<p>Title: "Bloodied Hand"</p> 
-			</div> 
-			<div class="gallery-item"> 
-				<img src="images/heart.png" alt="Winged Heart" onclick="openModal(this)"> 
-				<p>Title: "Winged Heart"</p> 
-			</div> 
-			<div class="gallery-item"> 
-				<img src="images/tatoo.png" alt="Sea and the Stars" onclick="openModal(this)"> 
-				<p>Title: "Sea and the Stars"</p> 
-			</div>
-			<div class="gallery-item"> 
-				<img src="images/spider.png" alt="Spider" onclick="openModal(this)"> 
-				<p>Title: "Spider"</p> 
-			</div> 
-			<div class="gallery-item"> 
-				<img src="images/bun.png" alt="Haloween Bunny" onclick="openModal(this)"> 
-				<p>Title: "Haloween Bunny"</p> 
-			</div> 
-			<div class="gallery-item"> 
-				<img src="images/mush.png" alt="Mushroom Landscape" onclick="openModal(this)"> 
-				<p>Title: "Mushroom Landscape"</p> 
-			</div> 
-			<div class="gallery-item"> 
-				<img src="images/landscape.png" alt="Landscape" onclick="openModal(this)"> 
-				<p>Title: "Landscape"</p> 
-			</div> 
-			<div class="gallery-item"> 
-				<img src="images/stilllife.png" alt="Still Life" onclick="openModal(this)"> 
-				<p>Title: "Still Life"</p> 
-			</div> 
-			<div class="gallery-item"> 
-				<img src="images/vamp.png" alt="Red Night" onclick="openModal(this)"> 
-				<p>Title: "Red Night"</p> 
-			</div> 
-			<div class="gallery-item"> 
-				<img src="images/witch.png" alt="Witch" onclick="openModal(this)"> 
-				<p>Title: "Witch"</p> 
-			</div> 
-			<div class="gallery-item"> 
-				<img src="images/seraphina.png" alt="Spring Elf" onclick="openModal(this)"> 
-				<p>Title: "Spring Elf"</p> 
-			</div>  
-			<div class="gallery-item"> 
-				<img src="images/bw.jpg" alt="Still Life in Black and White" onclick="openModal(this)"> 
-				<p>Title: "Still Life in Black and White"</p> 
-			</div> 
-		</div> 
-	</section>
-	<!-- Modal for Enlarged Images -->
-<div id="imageModal" class="modal" onclick="closeModal()">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
-        <p id="modalCaption"></p>
-    </div>
-	
-<script>
-	function openModal(imageElement) {
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    const modalCaption = document.getElementById('modalCaption');
+<div class="project-container">
 
-    modal.style.display = 'block';
-    modalImg.src = imageElement.src;
-    modalCaption.textContent = imageElement.alt;
-}
+<article class="project-thumbnail">
+<a href="concept.html">
+<img src="images/char.png" alt="Concept Art">
+<h3>Concept Art</h3>
+<p>Characters, creatures, and environments.</p>
+</a>
+</article>
 
-// Close the modal
-function closeModal() {
-    const modal = document.getElementById('imageModal');
-    modal.style.display = 'none';
-}
-</script>
-	
+<article class="project-thumbnail">
+<a href="graphic.html">
+<img src="images/icon1.png" alt="Graphic Design">
+<h3>Graphic Design</h3>
+<p>UI, icons, and branding design.</p>
+</a>
+</article>
+
+<article class="project-thumbnail">
+<a href="personal.html">
+<img src="images/witch.png" alt="Personal Work">
+<h3>Personal Projects</h3>
+<p>Illustrations and experimental pieces.</p>
+</a>
+</article>
+
+</div>
+</section>
+
 </body>
 </html>
