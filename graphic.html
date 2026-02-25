@@ -1,41 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Graphic Design | Anastasia Hinton</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graphic Design | Anastasia Hinton</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
 <header>
-<nav id="navbar">
-<ul>
-<li><a href="index.html#home">// home</a></li>
-<li><a href="index.html#about">// about</a></li>
-<li><a href="index.html#projects">// projects</a></li>
-<li><a href="index.html#contact">// contact</a></li>
-</ul>
-</nav>
+  <nav id="navbar">
+    <ul>
+      <li><a href="index.html#home">// home</a></li>
+      <li><a href="index.html#aboutme">// about me</a></li>
+      <li><a href="index.html#projects">// projects</a></li>
+      <li><a href="index.html#experience">// experience</a></li>
+      <li><a href="index.html#contact">// contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-<section class="content-section">
-<h2>Graphic Design</h2>
-
-<div class="gallery-container">
-
-<img src="images/icon1.png" alt="Artemis Icon">
-<img src="images/icon2.png" alt="Maat Icon">
-<img src="images/icon3.png" alt="Nemesis Icon">
-<img src="images/UI.png" alt="Settings UI Design">
-<img src="images/pfp.png" alt="Profile Icon">
-<img src="images/heart.png" alt="Winged Heart">
-<img src="images/tatoo.png" alt="Sea and the Stars">
-<img src="images/bloodyhand.png" alt="Bloodied Hand">
-
-</div>
+<section id="art-hero" class="hero-graphic">
+  <div class="overlayy">
+    <h1>Graphic Design</h1>
+    <p>UI, icons, and visual systems.</p>
+    <p>Click any image to enlarge.</p>
+  </div>
 </section>
+
+<section id="gallery" class="content-section">
+  <h2>Gallery</h2>
+  <div class="gallery-container">
+
+    <div class="gallery-item">
+      <img src="images/icon1.png" alt="Artemis Icon" onclick="openModal(this)">
+      <p>Artemis Icon</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="images/icon2.png" alt="Maat Icon" onclick="openModal(this)">
+      <p>Maat Icon</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="images/icon3.png" alt="Nemesis Icon" onclick="openModal(this)">
+      <p>Nemesis Icon</p>
+    </div>
+
+    <div class="gallery-item">
+      <img src="images/UI.png" alt="Settings UI" onclick="openModal(this)">
+      <p>Settings UI</p>
+    </div>
+
+  </div>
+</section>
+
+<div id="imageModal" class="modal" onclick="closeModal()">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImage">
+  <p id="modalCaption"></p>
+</div>
+
+<script>
+function openModal(imageElement) {
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  const modalCaption = document.getElementById('modalCaption');
+
+  modal.style.display = 'block';
+  modalImg.src = imageElement.src;
+  modalCaption.textContent = imageElement.alt;
+}
+
+function closeModal() {
+  const modal = document.getElementById('imageModal');
+  modal.style.display = 'none';
+}
+</script>
 
 </body>
 </html>
