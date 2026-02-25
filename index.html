@@ -74,7 +74,26 @@
 <p>LinkedIn: <a href="https://linkedin.com/in/anastasiah1014">linkedin.com/in/anastasiah1014</a></p>
 </section>
 
+  <script> 
+const navbar = document.getElementById('navbar'); 
+const homeSection = document.getElementById('home'); 
+const navbarHeight = navbar.offsetHeight; 
+// Listen for scroll events to make navbar sticky after passing the home section 
+window.addEventListener('scroll', () => { 
+const homeBottom = homeSection.getBoundingClientRect().bottom; 
+if (homeBottom - navbarHeight <= 0) { navbar.classList.add('sticky'); } 
+else { navbar.classList.remove('sticky'); } }); 
+// Scroll arrow logic 
+const scrollArrow = document.getElementById('scrollArrow'); 
+    window.addEventListener('scroll', () => { 
+      scrollArrow.style.opacity = window.scrollY > 50 ? '0' : '1'; }); 
+    scrollArrow.addEventListener('click', () => { 
+      window.scrollTo({ top: window.innerHeight, behavior: 'smooth' }); }); 
+</script>
+
+
 </body>
 </html>
+
 
 
