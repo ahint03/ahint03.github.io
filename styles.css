@@ -673,6 +673,49 @@ p {
 }
 
 
+.hero-personal {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-personal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+    cursor: pointer;
+}
+
+.hero-personal::before,
+.hero-personal::after {
+    display: none;
+}
+
+.hero-personal .hero-click-text {
+    position: absolute;
+    bottom: 64px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 0.95rem;
+    opacity: 0.95;
+    z-index: 4;
+    white-space: nowrap;
+}
+
+.hero-personal #scrollArrow {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.3rem;
+    color: white;
+    animation: bounce 2s infinite;
+    z-index: 4;
+}
 
 
 
