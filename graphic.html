@@ -1,82 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Graphic Design | Anastasia Hinton</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Design | Anastasia Hinton</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<header>
-  <nav id="navbar">
-    <ul>
-      <li><a href="index.html#home">// home</a></li>
-      <li><a href="index.html#aboutme">// about me</a></li>
-      <li><a href="index.html#projects">// projects</a></li>
-      <li><a href="index.html#experience">// experience</a></li>
-      <li><a href="index.html#contact">// contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <header>
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html#home">// home</a></li>
+                <li><a href="index.html#aboutme">// about me</a></li>
+                <li><a href="index.html#projects">// projects</a></li>
+                <li><a href="index.html#experience">// experience</a></li>
+                <li><a href="index.html#contact">// contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<section id="art-hero" class="hero-graphic">
-  <div class="overlayy">
-    <h1>Graphic Design</h1>
-    <p>UI, icons, and visual systems.</p>
-    <p>Click any image to enlarge.</p>
-  </div>
-</section>
 
-<section id="gallery" class="content-section">
-  <h2>Gallery</h2>
-  <div class="gallery-container">
+    <!-- Hero Section -->
 
-    <div class="gallery-item">
-      <img src="images/icon1.png" alt="Artemis Icon" onclick="openModal(this)">
-      <p>Artemis Icon</p>
+    <section id="art-hero" class="hero-concept">
+
+        <img
+            id="graphicHeroImage"
+            src="images/Graphic.png"
+            alt="Graphic Design Overview"
+            onclick="openModal(this)"
+        >
+
+        <p class="hero-click-text">Click image to enlarge</p>
+
+        <div id="scrollArrow">↓</div>
+
+    </section>
+
+
+
+    <!-- Logos -->
+
+    <section class="content-section">
+
+        <h2>Logos</h2>
+        <div class="section-divider"></div>
+
+        <div class="gallery-container">
+
+            <div class="gallery-item">
+                <img src="images/FoodX_color.png" alt="FoodX Logo" onclick="openModal(this)">
+                <p>FoodX Logo</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/logo.png" alt="Logo Design" onclick="openModal(this)">
+                <p>Logo Design</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/LV.png" alt="LV Logo" onclick="openModal(this)">
+                <p>LV Logo</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Icons -->
+
+    <section class="content-section">
+
+        <h2>Icons</h2>
+        <div class="section-divider"></div>
+
+        <div class="gallery-container">
+
+            <div class="gallery-item">
+                <img src="images/icon1.png" alt="Icon Set 1" onclick="openModal(this)">
+                <p>Icon Set 1</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/icon2.png" alt="Icon Set 2" onclick="openModal(this)">
+                <p>Icon Set 2</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/icon3.png" alt="Icon Set 3" onclick="openModal(this)">
+                <p>Icon Set 3</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Check.png" alt="Check Icon" onclick="openModal(this)">
+                <p>Check Icon</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/lock.png" alt="Lock Icon" onclick="openModal(this)">
+                <p>Lock Icon</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- UI -->
+
+    <section class="content-section">
+
+        <h2>UI</h2>
+        <div class="section-divider"></div>
+
+        <div class="gallery-container">
+
+            <div class="gallery-item">
+                <img src="images/UI.png" alt="User Interface Design" onclick="openModal(this)">
+                <p>User Interface Design</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/UI_FoodX1.png" alt="FoodX UI" onclick="openModal(this)">
+                <p>FoodX UI</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Misc -->
+
+    <section class="content-section">
+
+        <h2>Miscellaneous</h2>
+        <div class="section-divider"></div>
+
+        <div class="gallery-container">
+
+            <div class="gallery-item">
+                <img src="images/Typography.png" alt="Typography Study" onclick="openModal(this)">
+                <p>Typography Study</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/moodboard.jpg" alt="Moodboard" onclick="openModal(this)">
+                <p>Moodboard</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/stamp.jpg" alt="Stamp Design" onclick="openModal(this)">
+                <p>Stamp Design</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/tatoo.png" alt="Tattoo Concept" onclick="openModal(this)">
+                <p>Tattoo Concept</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/image7.png" alt="Graphic Experiment" onclick="openModal(this)">
+                <p>Graphic Experiment</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Modal -->
+
+    <div id="imageModal" class="modal">
+
+        <span class="close" onclick="closeModal()">×</span>
+
+        <span class="nav-arrow left" onclick="changeImage(-1)">&#10094;</span>
+
+        <img class="modal-content" id="modalImage">
+
+        <span class="nav-arrow right" onclick="changeImage(1)">&#10095;</span>
+
+        <p id="modalCaption"></p>
+
     </div>
 
-    <div class="gallery-item">
-      <img src="images/icon2.png" alt="Maat Icon" onclick="openModal(this)">
-      <p>Maat Icon</p>
-    </div>
 
-    <div class="gallery-item">
-      <img src="images/icon3.png" alt="Nemesis Icon" onclick="openModal(this)">
-      <p>Nemesis Icon</p>
-    </div>
 
-    <div class="gallery-item">
-      <img src="images/UI.png" alt="Settings UI" onclick="openModal(this)">
-      <p>Settings UI</p>
-    </div>
+    <script>
 
-  </div>
-</section>
+        let currentIndex = 0;
+        let galleryImages = [];
 
-<div id="imageModal" class="modal" onclick="closeModal()">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modalImage">
-  <p id="modalCaption"></p>
-</div>
+        function openModal(imageElement) {
 
-<script>
-function openModal(imageElement) {
-  const modal = document.getElementById('imageModal');
-  const modalImg = document.getElementById('modalImage');
-  const modalCaption = document.getElementById('modalCaption');
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
 
-  modal.style.display = 'block';
-  modalImg.src = imageElement.src;
-  modalCaption.textContent = imageElement.alt;
-}
+            galleryImages = Array.from(document.querySelectorAll(".gallery-item img"));
+            currentIndex = galleryImages.indexOf(imageElement);
 
-function closeModal() {
-  const modal = document.getElementById('imageModal');
-  modal.style.display = 'none';
-}
-</script>
+            modal.style.display = 'block';
+            modalImg.src = imageElement.src;
+            modalCaption.textContent = imageElement.alt;
+
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        function changeImage(direction) {
+
+            currentIndex += direction;
+
+            if (currentIndex < 0) currentIndex = galleryImages.length - 1;
+            if (currentIndex >= galleryImages.length) currentIndex = 0;
+
+            const newImage = galleryImages[currentIndex];
+
+            document.getElementById('modalImage').src = newImage.src;
+            document.getElementById('modalCaption').textContent = newImage.alt;
+
+        }
+
+        document.addEventListener("keydown", function(e) {
+
+            if (document.getElementById('imageModal').style.display === 'block') {
+
+                if (e.key === "Escape") closeModal();
+                if (e.key === "ArrowRight") changeImage(1);
+                if (e.key === "ArrowLeft") changeImage(-1);
+
+            }
+
+        });
+
+    </script>
+
 
 </body>
+
 </html>
