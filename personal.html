@@ -1,117 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Work | Anastasia Hinton</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Work | Anastasia Hinton</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<header>
-  <nav id="navbar">
-    <ul>
-      <li><a href="index.html#home">// home</a></li>
-      <li><a href="index.html#aboutme">// about me</a></li>
-      <li><a href="index.html#projects">// projects</a></li>
-      <li><a href="index.html#experience">// experience</a></li>
-      <li><a href="index.html#contact">// contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <header>
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html#home">// home</a></li>
+                <li><a href="index.html#aboutme">// about me</a></li>
+                <li><a href="index.html#projects">// projects</a></li>
+                <li><a href="index.html#experience">// experience</a></li>
+                <li><a href="index.html#contact">// contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<section id="art-hero" class="hero-personal">
-  <div class="overlayy">
-    <h1>Personal Work</h1>
-    <p>Illustrations, studies, and experimentation.</p>
-    <p>Click any image to enlarge.</p>
-  </div>
-</section>
 
-<section id="gallery" class="content-section">
-  <h2>Gallery</h2>
-  <div class="gallery-container">
+    <!-- Hero Section -->
 
-    <div class="gallery-item">
-      <img src="images/pfp.png" alt="Self Portrait" onclick="openModal(this)">
-      <p>Self Portrait</p>
+    <section id="art-hero" class="hero-concept">
+
+        <img
+            id="personalHeroImage"
+            src="images/Personal.png"
+            alt="Personal Work Overview"
+            onclick="openModal(this)"
+        >
+
+        <p class="hero-click-text">Click image to enlarge</p>
+
+        <div id="scrollArrow">↓</div>
+
+    </section>
+
+
+
+    <!-- Characters and Creatures -->
+
+    <section class="content-section">
+
+        <h2>Characters &amp; Creatures</h2>
+        <div class="section-divider"></div>
+
+        <div class="gallery-container">
+
+            <div class="gallery-item">
+                <img src="images/butterfly.png" alt="Butterfly" onclick="openModal(this)">
+                <p>Butterfly</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/park.png" alt="Park Scene" onclick="openModal(this)">
+                <p>Park Scene</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/glitch.png" alt="Glitch" onclick="openModal(this)">
+                <p>Glitch</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/lilguy.jpg" alt="Little Guy" onclick="openModal(this)">
+                <p>Little Guy</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/bratz.png" alt="Bratz" onclick="openModal(this)">
+                <p>Bratz</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/bun.png" alt="Halloween Bunny" onclick="openModal(this)">
+                <p>Halloween Bunny</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/spider.png" alt="Spider" onclick="openModal(this)">
+                <p>Spider</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/pfp.png" alt="Self Portrait" onclick="openModal(this)">
+                <p>Self Portrait</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/seraphina.png" alt="Seraphina" onclick="openModal(this)">
+                <p>Seraphina</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Mixed Media -->
+
+    <section class="content-section">
+
+        <h2>Mixed Media</h2>
+        <div class="section-divider"></div>
+
+        <div class="gallery-container">
+
+            <div class="gallery-item">
+                <img src="images/faerie.jpg" alt="Faerie" onclick="openModal(this)">
+                <p>Faerie</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/ghosts.jpg" alt="Ghosts" onclick="openModal(this)">
+                <p>Ghosts</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/green.jpg" alt="Green Study" onclick="openModal(this)">
+                <p>Green Study</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/swing.jpg" alt="Swing" onclick="openModal(this)">
+                <p>Swing</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/duck.jpg" alt="Duck" onclick="openModal(this)">
+                <p>Duck</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/pillow.jpg" alt="Pillow" onclick="openModal(this)">
+                <p>Pillow</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/moth.jpg" alt="Moth" onclick="openModal(this)">
+                <p>Moth</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Objects -->
+
+    <section class="content-section">
+
+        <h2>Objects</h2>
+        <div class="section-divider"></div>
+
+        <div class="gallery-container">
+
+            <div class="gallery-item">
+                <img src="images/bloodyhand.png" alt="Bloodied Hand" onclick="openModal(this)">
+                <p>Bloodied Hand</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/heart.png" alt="Winged Heart" onclick="openModal(this)">
+                <p>Winged Heart</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/stilllife.png" alt="Still Life" onclick="openModal(this)">
+                <p>Still Life</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/bw.jpg" alt="Still Life in Black and White" onclick="openModal(this)">
+                <p>Still Life in Black and White</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Modal -->
+
+    <div id="imageModal" class="modal">
+
+        <span class="close" onclick="closeModal()">×</span>
+
+        <span class="nav-arrow left" onclick="changeImage(-1)">&#10094;</span>
+
+        <img class="modal-content" id="modalImage">
+
+        <span class="nav-arrow right" onclick="changeImage(1)">&#10095;</span>
+
+        <p id="modalCaption"></p>
+
     </div>
 
-    <div class="gallery-item">
-      <img src="images/bloodyhand.png" alt="Bloodied Hand" onclick="openModal(this)">
-      <p>Bloodied Hand</p>
-    </div>
 
-    <div class="gallery-item">
-      <img src="images/heart.png" alt="Winged Heart" onclick="openModal(this)">
-      <p>Winged Heart</p>
-    </div>
 
-    <div class="gallery-item">
-      <img src="images/tatoo.png" alt="Sea and the Stars" onclick="openModal(this)">
-      <p>Sea and the Stars</p>
-    </div>
+    <script>
 
-    <div class="gallery-item">
-      <img src="images/spider.png" alt="Spider" onclick="openModal(this)">
-      <p>Spider</p>
-    </div>
+        let currentIndex = 0;
+        let galleryImages = [];
 
-    <div class="gallery-item">
-      <img src="images/bun.png" alt="Halloween Bunny" onclick="openModal(this)">
-      <p>Halloween Bunny</p>
-    </div>
+        function openModal(imageElement) {
 
-    <div class="gallery-item">
-      <img src="images/mush.png" alt="Mushroom Landscape" onclick="openModal(this)">
-      <p>Mushroom Landscape</p>
-    </div>
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
 
-    <div class="gallery-item">
-      <img src="images/landscape.png" alt="Landscape" onclick="openModal(this)">
-      <p>Landscape</p>
-    </div>
+            galleryImages = Array.from(document.querySelectorAll(".gallery-item img"));
+            currentIndex = galleryImages.indexOf(imageElement);
 
-    <div class="gallery-item">
-      <img src="images/stilllife.png" alt="Still Life" onclick="openModal(this)">
-      <p>Still Life</p>
-    </div>
+            modal.style.display = 'block';
+            modalImg.src = imageElement.src;
+            modalCaption.textContent = imageElement.alt;
 
-    <div class="gallery-item">
-      <img src="images/vamp.png" alt="Red Night" onclick="openModal(this)">
-      <p>Red Night</p>
-    </div>
+        }
 
-    <div class="gallery-item">
-      <img src="images/bw.jpg" alt="Still Life in Black and White" onclick="openModal(this)">
-      <p>Still Life in Black and White</p>
-    </div>
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
 
-  </div>
-</section>
+        function changeImage(direction) {
 
-<div id="imageModal" class="modal" onclick="closeModal()">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modalImage">
-  <p id="modalCaption"></p>
-</div>
+            currentIndex += direction;
 
-<script>
-function openModal(imageElement) {
-  const modal = document.getElementById('imageModal');
-  const modalImg = document.getElementById('modalImage');
-  const modalCaption = document.getElementById('modalCaption');
+            if (currentIndex < 0) currentIndex = galleryImages.length - 1;
+            if (currentIndex >= galleryImages.length) currentIndex = 0;
 
-  modal.style.display = 'block';
-  modalImg.src = imageElement.src;
-  modalCaption.textContent = imageElement.alt;
-}
+            const newImage = galleryImages[currentIndex];
 
-function closeModal() {
-  const modal = document.getElementById('imageModal');
-  modal.style.display = 'none';
-}
-</script>
+            document.getElementById('modalImage').src = newImage.src;
+            document.getElementById('modalCaption').textContent = newImage.alt;
+
+        }
+
+        document.addEventListener("keydown", function (e) {
+
+            if (document.getElementById('imageModal').style.display === 'block') {
+
+                if (e.key === "Escape") closeModal();
+                if (e.key === "ArrowRight") changeImage(1);
+                if (e.key === "ArrowLeft") changeImage(-1);
+
+            }
+
+        });
+
+        const scrollArrow = document.getElementById('scrollArrow');
+
+        window.addEventListener('scroll', () => {
+            if (scrollArrow) {
+                scrollArrow.style.opacity = window.scrollY > 50 ? '0' : '1';
+            }
+        });
+
+        if (scrollArrow) {
+            scrollArrow.addEventListener('click', (event) => {
+                event.stopPropagation();
+                window.scrollTo({
+                    top: window.innerHeight,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+    </script>
 
 </body>
+
 </html>
