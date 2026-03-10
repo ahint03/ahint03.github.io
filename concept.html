@@ -150,17 +150,31 @@
   </div>
 </section>
 
-<div id="imageModal" class="modal" onclick="closeModal()">
+<div id="imageModal" class="modal">
   <span class="close" onclick="closeModal()">&times;</span>
+
+  <span class="nav-arrow left" onclick="changeImage(-1)">&#10094;</span>
+
   <img class="modal-content" id="modalImage">
+
+  <span class="nav-arrow right" onclick="changeImage(1)">&#10095;</span>
+
   <p id="modalCaption"></p>
 </div>
 
+
 <script>
+
+let currentIndex = 0;
+let galleryImages = [];
+
 function openModal(imageElement) {
   const modal = document.getElementById('imageModal');
   const modalImg = document.getElementById('modalImage');
   const modalCaption = document.getElementById('modalCaption');
+
+  galleryImages = Array.from(document.querySelectorAll(".gallery-item img"));
+  currentIndex = galleryImages.indexOf(imageElement);
 
   modal.style.display = 'block';
   modalImg.src = imageElement.src;
@@ -168,38 +182,36 @@ function openModal(imageElement) {
 }
 
 function closeModal() {
-  const modal = document.getElementById('imageModal');
-  modal.style.display = 'none';
+  document.getElementById('imageModal').style.display = 'none';
 }
 
-const scrollArrow = document.getElementById('scrollArrow');
+function changeImage(direction) {
+  currentIndex += direction;
 
-window.addEventListener('scroll', () => {
-  if (scrollArrow) {
-    scrollArrow.style.opacity = window.scrollY > 50 ? '0' : '1';
+  if (currentIndex < 0) currentIndex = galleryImages.length - 1;
+  if (currentIndex >= galleryImages.length) currentIndex = 0;
+
+  const newImage = galleryImages[currentIndex];
+
+  document.getElementById('modalImage').src = newImage.src;
+  document.getElementById('modalCaption').textContent = newImage.alt;
+}
+
+document.addEventListener("keydown", function(e) {
+  if (document.getElementById('imageModal').style.display === 'block') {
+
+    if (e.key === "Escape") closeModal();
+    if (e.key === "ArrowRight") changeImage(1);
+    if (e.key === "ArrowLeft") changeImage(-1);
+
   }
 });
 
-const heroSection = document.getElementById('art-hero');
-if (heroSection) {
-  heroSection.addEventListener('click', () => {
-    openModal(document.getElementById('conceptHeroImage'));
-  });
-}
-
-if (scrollArrow) {
-  scrollArrow.addEventListener('click', (event) => {
-    event.stopPropagation();
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    });
-  });
-}
 </script>
 
 </body>
 </html>
+
 
 
 
