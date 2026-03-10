@@ -685,7 +685,6 @@ p {
     height: 100%;
     object-fit: contain;
     object-position: center;
-    transform: scale(0.92);
 }
 
 .hero-personal::before,
@@ -713,6 +712,7 @@ p {
     font-size: 1.1rem;
     z-index: 5;
 }
+
 
 
 
