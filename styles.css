@@ -346,12 +346,6 @@ article {
     margin-bottom: 30px;
 }
 
-#art-hero { 
-    position: relative;
-    height: 80vh;
-    width: 100%;
-    background: url('images/weather.png') no-repeat center center / cover;
-}
 #art-hero .overlayy { 
 	text-align: center; 
 	color: black; 
@@ -801,6 +795,7 @@ nav.sticky {
     opacity: 1;
     text-shadow: 0 2px 8px rgba(0,0,0,0.45);
 }
+
 
 
 
