@@ -753,7 +753,7 @@ nav.sticky {
 
 .hero-click-text {
     position: absolute;
-    bottom: 48px;
+    bottom: 52px;
     left: 50%;
     transform: translateX(-50%);
     color: white;
@@ -781,6 +781,7 @@ nav.sticky {
 }
 
 grid-template-columns: repeat(3, minmax(0, 420px));
+
 
 
 
