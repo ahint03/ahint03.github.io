@@ -754,29 +754,33 @@ nav.sticky {
 
 .scroll-indicator {
     position: absolute;
-    bottom: 30px;
+    bottom: 55px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     color: white;
     z-index: 3;
+    width: max-content;
 }
 
 .click-text {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    margin-bottom: 5px;
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-bottom: 4px;
+    line-height: 1.2;
 }
 
 .scroll-text {
-    font-size: 1rem;
-    letter-spacing: 1px;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
     margin-bottom: 6px;
+    line-height: 1.2;
 }
 
 .hero-concept #scrollArrow {
     font-size: 2.3rem;
     animation: bounce 2s infinite;
+    line-height: 1;
 }
 
 
