@@ -20,15 +20,14 @@
   </nav>
 </header>
 
-<section id="art-hero" class="hero-concept">
-  <div class="overlayy">
-    <p>Click any image to enlarge.</p>
+<section id="art-hero" class="hero-concept" onclick="openModal(document.getElementById('conceptHeroImage'))">
+  <img id="conceptHeroImage" src="images/Concept.png" alt="Floating island environment concept">
+  <div class="scroll-indicator">
+    <span>Scroll to explore</span>
+    <div id="scrollArrow">↓</div>
   </div>
 </section>
 
-<section class="featured-art">
-  <img src="images/Concept.png" alt="Concept Art Overview" onclick="openModal(this)">
-</section>
 
 <section class="content-section">
   <h2>Characters</h2>
@@ -173,7 +172,33 @@ function closeModal() {
   const modal = document.getElementById('imageModal');
   modal.style.display = 'none';
 }
+
+const scrollArrow = document.getElementById('scrollArrow');
+
+window.addEventListener('scroll', () => {
+  if (scrollArrow) {
+    scrollArrow.style.opacity = window.scrollY > 50 ? '0' : '1';
+  }
+});
+
+const heroSection = document.getElementById('art-hero');
+if (heroSection) {
+  heroSection.addEventListener('click', () => {
+    openModal(document.getElementById('conceptHeroImage'));
+  });
+}
+
+if (scrollArrow) {
+  scrollArrow.addEventListener('click', (event) => {
+    event.stopPropagation();
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  });
+}
 </script>
 
 </body>
 </html>
+
