@@ -20,11 +20,13 @@
   </nav>
 </header>
 
-<section id="art-hero" class="hero-concept" onclick="openModal(document.getElementById('conceptHeroImage'))">
-  <img id="conceptHeroImage" src="images/Concept.png" alt="Floating island environment concept">
+<section id="art-hero" class="hero-concept">
+  <img id="conceptHeroImage" src="images/Concept.png" alt="Floating island environment concept" onclick="openModal(this)">
+
   <div class="scroll-indicator">
-    <span>Scroll to explore</span>
-    <div id="scrollArrow">↓</div>
+      <p class="click-text">Click image to enlarge</p>
+      <p class="scroll-text">Scroll to explore</p>
+      <div id="scrollArrow">↓</div>
   </div>
 </section>
 
@@ -201,4 +203,5 @@ if (scrollArrow) {
 
 </body>
 </html>
+
 
