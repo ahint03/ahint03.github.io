@@ -512,7 +512,7 @@ p {
 
 .hero-click-text {
     position: absolute;
-    bottom: 56px;
+    bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
     color: white;
@@ -579,5 +579,6 @@ p {
     line-height: 1.9;
     color: #bfbfbf;
 }
+
 
 
