@@ -534,7 +534,7 @@ p {
     display: grid;
     grid-template-columns: repeat(3, 360px);
     justify-content: center;
-    gap: 24px;
+    gap: 40px 36px;
     margin-top: 24px;
 }
 
@@ -551,7 +551,7 @@ p {
     object-fit: contain;
     background-color: #f3f3f3;
     border-radius: 10px;
-    padding: 10px;
+    padding: 6px;
     display: block;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     image-rendering: auto;
@@ -579,4 +579,5 @@ p {
     line-height: 1.9;
     color: #bfbfbf;
 }
+
 
