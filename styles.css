@@ -678,32 +678,28 @@ nav.sticky {
 }
 
 .gallery-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 36px;
+    justify-items: center;
     margin-top: 40px;
 }
 
 .gallery-item {
-    flex: 0 0 320px;
-    max-width: 320px;
+    width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: none;
-    box-shadow: none;
-    border: none;
-    padding: 0;
 }
 
 .gallery-item img {
-    width: 320px;
-    height: 320px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     object-fit: contain;
     background-color: #f3f3f3;
     border-radius: 10px;
     display: block;
+    padding: 18px;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -793,6 +789,7 @@ nav.sticky {
 .section-divider {
     margin: 10px auto 20px auto;
 }
+
 
 
 
