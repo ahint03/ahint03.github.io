@@ -331,8 +331,12 @@ ul li a {
 
 /* Content Sections */
 .content-section {
-    padding: 80px;
-    background-color: #282c35;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.content-section h2 {
+    margin-bottom: 10px;
 }
 
 h2 {
@@ -786,6 +790,9 @@ nav.sticky {
     line-height: 1;
 }
 
+.section-divider {
+    margin: 10px auto 20px auto;
+}
 
 
 
