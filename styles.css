@@ -647,7 +647,7 @@ p {
 
 .hero-graphic .hero-click-text {
     position: absolute;
-    bottom: 58px;
+    bottom: 62px;
     left: 50%;
     transform: translateX(-50%);
     color: white;
@@ -668,6 +668,7 @@ p {
     animation: bounce 2s infinite;
     z-index: 4;
 }
+
 
 
 
