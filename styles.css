@@ -673,45 +673,48 @@ nav.sticky {
   color: #fff;
 }
 
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 36px;
+    margin-top: 40px;
+}
+
 .gallery-item {
-    flex: 0 0 160px;
-    max-width: 160px;
+    flex: 0 0 320px;
+    max-width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: none;
+    box-shadow: none;
+    border: none;
+    padding: 0;
 }
 
 .gallery-item img {
-    width: 160px;
-    height: 160px;
-    object-fit: cover;
+    width: 320px;
+    height: 320px;
+    object-fit: contain;
+    background-color: #f3f3f3;
     border-radius: 10px;
-    background-color: #1e1e28;
+    display: block;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-item img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
 }
 
 .gallery-item p {
-    margin-top: 10px;
-    font-size: 0.85rem;
-    color: #ccc;
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: #d6d6d6;
     text-align: center;
     line-height: 1.35;
-    max-width: 150px;
 }
-
-
-.gallery-item {
-  flex: 0 0 300px;
-  max-width: 300px;
-}
-
-.gallery-item img {
-  width: 300px;
-  height: 300px;
-  object-fit: contain;           
-  background-color: #1e1e28;
-  display: block;
-  border-radius: 10px;
-
   /* Improves perceived sharpness */
   image-rendering: auto;
   image-rendering: crisp-edges;
@@ -782,6 +785,7 @@ nav.sticky {
     animation: bounce 2s infinite;
     line-height: 1;
 }
+
 
 
 
