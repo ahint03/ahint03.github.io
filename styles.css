@@ -764,9 +764,9 @@ nav.sticky {
 }
 
 .click-text {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     opacity: 0.85;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     line-height: 1.2;
 }
 
@@ -782,6 +782,7 @@ nav.sticky {
     animation: bounce 2s infinite;
     line-height: 1;
 }
+
 
 
 
