@@ -512,11 +512,11 @@ p {
 
 .hero-click-text {
     position: absolute;
-    bottom: 52px;
+    bottom: 56px;
     left: 50%;
     transform: translateX(-50%);
     color: white;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     opacity: 0.9;
     z-index: 3;
     margin: 0;
@@ -579,3 +579,4 @@ p {
     line-height: 1.9;
     color: #bfbfbf;
 }
+
