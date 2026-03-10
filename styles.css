@@ -771,9 +771,9 @@ nav.sticky {
 }
 
 .click-text {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
     opacity: 0.85;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     line-height: 1.2;
 }
 
@@ -793,6 +793,7 @@ nav.sticky {
 .section-divider {
     margin: 10px auto 20px auto;
 }
+
 
 
 
