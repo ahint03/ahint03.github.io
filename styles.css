@@ -683,7 +683,7 @@ nav.sticky {
 }
 
 .gallery-item {
-    width: 380px;
+    width: 4200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -780,6 +780,7 @@ nav.sticky {
     margin: 10px auto 20px auto;
 }
 
+grid-template-columns: repeat(3, minmax(0, 420px));
 
 
 
