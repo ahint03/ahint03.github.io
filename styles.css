@@ -735,66 +735,50 @@ nav.sticky {
     height: 100vh;
     width: 100%;
     overflow: hidden;
-    cursor: pointer;
     background: #1e1e28;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .hero-concept img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    object-position: center;
+    cursor: pointer;
 }
 
-/* turn off old concept hero overlay/text */
-.hero-concept .overlayy {
-    display: none;
-}
-
-/* remove the old dark hero overlay on this page */
-.hero-concept::before {
-    display: none;
-}
-
+/* remove old overlays */
+.hero-concept::before,
 .hero-concept::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.06), rgba(0,0,0,0.18));
-    pointer-events: none;
+    display: none;
 }
 
 .scroll-indicator {
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     color: white;
-    z-index: 2;
-    pointer-events: none;
+    z-index: 3;
 }
 
-.scroll-indicator span {
-    display: block;
+.click-text {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.scroll-text {
     font-size: 1rem;
-    margin-bottom: 8px;
     letter-spacing: 1px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+    margin-bottom: 6px;
 }
 
 .hero-concept #scrollArrow {
-    position: static;
-    transform: none;
-    font-size: 2.5rem;
-    color: white;
+    font-size: 2.3rem;
     animation: bounce 2s infinite;
-    opacity: 1;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.45);
 }
+
 
 
 
