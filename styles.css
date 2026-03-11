@@ -678,34 +678,56 @@ p {
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    background: #100D1C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-personal img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 42%;
+    width: min(100%, 1800px);
+    height: min(100%, 100vh);
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    cursor: pointer;
 }
 
 .hero-personal::before,
 .hero-personal::after {
-    display: none;
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at center, rgba(16, 13, 28, 0) 55%, rgba(16, 13, 28, 0.45) 100%);
 }
 
 .hero-personal .hero-click-text {
     position: absolute;
-    bottom: 90px;
+    bottom: 70px;
     left: 50%;
     transform: translateX(-50%);
+    color: white;
+    font-size: 0.95rem;
+    z-index: 5;
+    white-space: nowrap;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 
 .hero-personal #scrollArrow {
     position: absolute;
-    bottom: 40px;
+    bottom: 28px;
     left: 50%;
     transform: translateX(-50%);
+    font-size: 2.3rem;
+    color: white;
+    animation: bounce 2s infinite;
+    z-index: 5;
+    line-height: 1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
-}
+
 
 
 
