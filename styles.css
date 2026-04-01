@@ -729,8 +729,26 @@ p {
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 
-
-
+.project-card {
+    width: 300px;
+    height: 340px;
+    background: #2e2e2e;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease;
+}
+.project-card {
+    width: 300px;
+    height: 340px;
+    background: #2e2e2e;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease;
+}
 
 
 
