@@ -123,7 +123,23 @@ h2 {
     color: inherit;
     height: 100%;
 }
+.project-thumbnail a {
+    text-decoration: none;
+    color: white;
+}
 
+.project-thumbnail a:visited {
+    color: white;
+}
+
+.project-thumbnail a:hover {
+    color: white;
+}
+
+.project-thumbnail h3,
+.project-thumbnail p {
+    color: white;
+}
 /* Title Section */
 .title-section {
     text-align: center;
