@@ -733,8 +733,93 @@ p {
 
 
 
+/* more projects */
+.project-hero {
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
 
+.project-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
+.project-header {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.project-header h1 {
+    font-size: 3rem;
+}
+
+.project-subtitle {
+    color: #ccc;
+    margin-top: 10px;
+}
+
+.project-section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.project-section h2 {
+    margin-bottom: 15px;
+    color: #2bbbd8;
+}
+
+.project-split {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.project-split.reverse {
+    flex-direction: row-reverse;
+}
+
+.split-text {
+    flex: 1;
+}
+
+.split-image {
+    flex: 1;
+}
+
+.split-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.tools-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tools-list li {
+    background: #2e2e2e;
+    padding: 8px 12px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 6px;
+}
 
 
 
