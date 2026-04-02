@@ -849,7 +849,10 @@ p {
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-
+.section-divider {
+    height: 80px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), #2b2f36);
+}
 
 
 
