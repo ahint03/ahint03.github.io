@@ -190,6 +190,21 @@ Overall, my role focused on both organizing the team’s workflow and bringing a
     </ul>
 </section>
 
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
 
+<script>
+function openModal(img) {
+    document.getElementById("imageModal").style.display = "block";
+    document.getElementById("modalImg").src = img.src;
+}
+
+function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+}
+    
+</script>
 </body>
 </html>
