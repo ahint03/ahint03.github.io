@@ -3,62 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project - Shoot for the Stars</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Shoot for the Stars</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Navigation Bar -->
-    <header>
-    <nav id="navbar">
-        <ul>
-            <li><a href="index.html#home">// home</a></li>
-            <li><a href="index.html#aboutme">// about me</a></li>
-            <li><a href="index.html#projects.html">// projects</a></li>
-            <li><a href="index.html#contact">// contact</a></li>
-        </ul>
-    </nav>
-</header>
+<!-- NAV -->
+<nav>
+    <ul>
+        <li><a href="index.html">// home</a></li>
+        <li><a href="index.html#about">// about me</a></li>
+        <li><a href="index.html#projects">// projects</a></li>
+        <li><a href="index.html#contact">// contact</a></li>
+    </ul>
+</nav>
 
-    <section id="shoot-for-the-stars">
-    <!-- Hero Section -->
-    <div class="title-section">
-        <h1>Shoot for the Stars</h1>
-        <p>A third-person platformer that combines creativity and gameplay innovation.</p>
+
+<!-- HERO -->
+<section class="project-hero">
+    <img src="images/stfs_hero.png" alt="Shoot for the Stars Hero">
+</section>
+
+
+<!-- TITLE -->
+<section class="project-header">
+    <h1>Shoot for the Stars</h1>
+    <p class="project-subtitle">
+        A third-person platformer focused on movement mechanics, constellation systems, and stylized worlds.
+    </p>
+</section>
+
+
+<!-- MY ROLE -->
+<section class="project-section">
+    <h2>My Role</h2>
+    <p>
+        Describe what you personally worked on here.
+        Example: Game design, level design, character art, UI, audio, Unreal Engine implementation, etc.
+    </p>
+</section>
+
+
+<!-- OVERVIEW -->
+<section class="project-section">
+    <h2>Overview</h2>
+    <p>
+        Explain the game concept, goal, mechanics, and overall idea of the project.
+    </p>
+</section>
+
+
+<!-- GAMEPLAY / MECHANICS -->
+<section class="project-split">
+    <div class="split-text">
+        <h2>Gameplay Mechanics</h2>
+        <p>
+            Explain mechanics like grapple hook, low gravity, jump pads,
+            star collection, constellation buffs, etc.
+        </p>
     </div>
 
-    <!-- Overview Section -->
-    <div class="angled-section">
-        <div class="content">
-            <h2>Overview</h2>
-            <p>
-                Dive into a whimsical journey to retrieve lost stars and return them to constellations.
-                This project features a mix of 2D cartoonish characters and stylized 3D environments,
-                with unique mechanics like grapple hooks, jump pads, and low gravity!
-            </p>
-        </div>
-        <div class="image">
-            <img src="your-image.jpg" alt="Game Screenshot">
-        </div>
-    </div>
-
-    <!-- Media Section -->
-    <div class="media-section">
-        <h2>Project Media</h2>
-        <div class="media-grid">
-            <iframe src="https://docs.google.com/document/d/e/2PACX-1vRPQ7Ox0zu6vljsaRjd-mTd3vnrI5NziTFs-huIAU8QPEHDCu02OCqdZoXgDTEnGJHivioBGvlAe3Wk/pub?embedded=true" frameborder="0"></iframe>
-            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQGso5XdCtNgia5vjxhUWhGl9u7cSBQ6qCTZz_TX7UTMquRniL2qGbZYuhBsVPnxAwPXoX9QZuKasOX/embed?start=false&loop=false&delayms=5000" frameborder="0"></iframe>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/K9IyEmxYRBw?si=QJ2Jez0Pb4MeqcFS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-	</div>
-    </div>
-		
-	<!-- Navigation -->
-    <div class="navigation-arrows">
-        <a href="project2.html" class="arrow left-arrow">← Previous</a>
-        <a href="project3.html" class="arrow right-arrow">Next →</a>
+    <div class="split-image">
+        <img src="images/gameplay1.png" alt="Gameplay Screenshot">
     </div>
 </section>
 
+
+<!-- LEVEL DESIGN -->
+<section class="project-split reverse">
+    <div class="split-text">
+        <h2>Level Design</h2>
+        <p>
+            Talk about level flow, challenges, puzzles, platforming design, etc.
+        </p>
+    </div>
+
+    <div class="split-image">
+        <img src="images/level1.png" alt="Level Design">
+    </div>
+</section>
+
+
+<!-- ART / CHARACTERS -->
+<section class="project-section">
+    <h2>Art & Characters</h2>
+
+    <div class="gallery">
+        <img src="images/character1.png">
+        <img src="images/character2.png">
+        <img src="images/environment1.png">
+    </div>
+</section>
+
+
+<!-- UI -->
+<section class="project-section">
+    <h2>UI & Systems</h2>
+
+    <div class="gallery">
+        <img src="images/ui1.png">
+        <img src="images/ui2.png">
+    </div>
+</section>
+
+
+<!-- AUDIO -->
+<section class="project-section">
+    <h2>Audio</h2>
+
+    <audio controls>
+        <source src="audio/theme.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio controls>
+        <source src="audio/jump.wav" type="audio/wav">
+    </audio>
+</section>
+
+
+<!-- VIDEO -->
+<section class="project-section">
+    <h2>Gameplay Video</h2>
+
+    <video controls width="800">
+        <source src="videos/gameplay.mp4" type="video/mp4">
+    </video>
+</section>
+
+
+<!-- PROCESS / WIP -->
+<section class="project-section">
+    <h2>Development Process</h2>
+
+    <div class="gallery">
+        <img src="images/sketch1.png">
+        <img src="images/blockout.png">
+        <img src="images/wip1.png">
+        <img src="images/wip2.png">
+    </div>
+</section>
+
+
+<!-- TOOLS -->
+<section class="project-section">
+    <h2>Tools Used</h2>
+    <ul class="tools-list">
+        <li>Unreal Engine</li>
+        <li>Autodesk Maya</li>
+        <li>Procreate</li>
+        <li>Photoshop</li>
+        <li>Audacity</li>
+    </ul>
+</section>
+
+
 </body>
 </html>
-
