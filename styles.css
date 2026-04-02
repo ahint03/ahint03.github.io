@@ -861,7 +861,38 @@ p {
 }
 
 
+.ui-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
 
+.ui-card {
+    background-color: #2a2f36;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ui-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.5);
+}
+
+.ui-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.ui-card p {
+    text-align: center;
+    font-size: 1rem;
+    color: #ccc;
+}
 
 
 
