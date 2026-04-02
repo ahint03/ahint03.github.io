@@ -820,7 +820,16 @@ p {
     display: inline-block;
     border-radius: 6px;
 }
-
+.section-box {
+    background-color: #2a2f36;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 20px auto 0 auto;
+    text-align: left;
+    line-height: 1.7;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
 
 
 
