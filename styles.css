@@ -919,6 +919,9 @@ p {
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+.info-card {
+    border-top: 3px solid #46c0d9;
+}
 
 .info-card:hover {
     transform: translateY(-3px);
