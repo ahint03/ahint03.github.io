@@ -927,14 +927,3 @@ p {
     color: #ddd;
 }
 
-.hero-divider {
-    width: 200px;
-    height: 3px;
-    margin: 30px auto 45px auto;
-    background: linear-gradient(
-        to right,
-        transparent,
-        #46c0d9,
-        transparent
-    );
-}
