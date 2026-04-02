@@ -925,14 +925,14 @@ p {
     color: #ddd;
 }
 
-.project-hero::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 140px;
+.hero-divider {
+    width: 200px;
     height: 3px;
-    background: #46c0d9;
-    box-shadow: 0 0 10px #46c0d9;
+    margin: 30px auto 45px auto;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #46c0d9,
+        transparent
+    );
 }
