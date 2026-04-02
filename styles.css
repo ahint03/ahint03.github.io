@@ -827,17 +827,23 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
     list-style: none;
     padding: 0;
+    margin-top: 20px;
 }
 
 .tools-list li {
     background-color: #2a2a2a;
-    padding: 10px 15px;
-    border-radius: 6px;
-    font-size: 14px;
+    padding: 16px 24px;
+    border-radius: 10px;
+    font-size: 16px;
+    min-width: 180px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
+
 .section-box {
     background-color: #2a2f36;
     padding: 30px;
