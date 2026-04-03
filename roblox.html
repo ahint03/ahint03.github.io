@@ -3,57 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project - Treasure Hunt</title>
+    <title>Treasure Hunt</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-    <!-- Navigation Bar -->
-    <header>
-    <nav id="navbar">
-        <ul>
-            <li><a href="index.html#home">// home</a></li>
-            <li><a href="index.html#aboutme">// about me</a></li>
-            <li><a href="index.html#projects.html">// projects</a></li>
-            <li><a href="index.html#contact">// contact</a></li>
-        </ul>
-    </nav>
-</header>
+<!-- NAV -->
+<nav id="navbar">
+    <ul>
+        <li><a href="index.html#home">// home</a></li>
+        <li><a href="index.html#aboutme">// about me</a></li>
+        <li><a href="index.html#projects">// projects</a></li>
+        <li><a href="index.html#contact">// contact</a></li>
+    </ul>
+</nav>
 
-    <section id="shoot-for-the-stars">
-    <!-- Hero Section -->
-    <div class="title-section">
-        <h1>Treasure Hunt</h1>
-        <p>With vibrant environments, a competitive edge, and endless replayability, Treasure Hunt is a thrilling game of exploration</p>
-    </div>
+<!-- HERO -->
+<section class="project-hero">
+    <img src="images/treasure_hero.png" alt="Treasure Hunt Hero">
+</section>
 
-    <!-- Overview Section -->
-    <div class="angled-section">
-        <div class="content">
-            <h2>Overview</h2>
-               <p> Treasure Hunt is an adventure game where players traverse dynamic islands, searching for hidden treasures scattered across procedurally generated terrain.</p> 
-		<p>Armed with keen observation, you must locate glowing treasures while listening for subtle sound cues that grow louder as you draw closer.</p>
-		<p>Each treasure rewards you with valuable coins to climb the leaderboards and showcase your prowess. </p>
-        </div>
-        <div class="image">
-            <img src="your-image.jpg" alt="Game Screenshot">
-        </div>
-    </div>
+<div class="hero-divider"></div>
 
-    <!-- Media Section -->
-    <div class="media-section">
-        <h2>Project Media</h2>
-        <div class="media-grid">
-           <iframe src="https://www.youtube.com/embed/94BP-y5FpP4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- PROJECT INFO -->
+<section class="project-section">
+    <h2>Project Info</h2>
+
+    <div class="project-info-grid">
+        <div class="info-card">
+            <h3>Role</h3>
+            <p>Solo Project</p>
         </div>
-    </div>
-		
-	<!-- Navigation -->
-    <div class="navigation-arrows">
-        <a href="project2.html" class="arrow left-arrow">← Previous</a>
-        <a href="project3.html" class="arrow right-arrow">Next →</a>
+
+        <div class="info-card">
+            <h3>Engine</h3>
+            <p>Roblox Studio</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Project Length</h3>
+            <p>3 weeks</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Platform</h3>
+            <p>PC</p>
+        </div>
     </div>
 </section>
+
+<!-- OVERVIEW -->
+<section class="project-section">
+    <h2>Overview</h2>
+    <div class="section-box">
+        <p>
+            Treasure Hunt is an adventure game where players traverse dynamic islands,
+            searching for hidden treasures scattered across procedurally generated terrain.
+            Players locate glowing treasures using visual and audio cues that grow stronger
+            as they approach hidden objects. Each treasure rewards coins used to compete
+            for leaderboard positions and improve replayability.
+        </p>
+    </div>
+</section>
+
+<!-- GAMEPLAY VIDEO -->
+<section class="project-section">
+    <h2>Gameplay</h2>
+
+    <div class="video-container">
+        <iframe 
+            width="900"
+            height="500"
+            src="https://www.youtube.com/embed/94BP-y5FpP4"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+    </div>
+</section>
+
+
+<!-- TOOLS -->
+<section class="project-section">
+    <h2>Tools Used</h2>
+    <ul class="tools-list">
+        <li>Roblox Studio</li>
+        <li>Lua</li>
+    </ul>
+</section>
+
+<!-- NAVIGATION -->
+<div class="project-navigation">
+    <a href="oathbound.html" class="nav-button">← Previous Project</a>
+    <a href="blank.html" class="nav-button">Next Project →</a>
+</div>
+
 <script>
 window.addEventListener("scroll", function() {
     const nav = document.getElementById("navbar");
@@ -64,5 +108,6 @@ window.addEventListener("scroll", function() {
     }
 });
 </script>
+
 </body>
 </html>
