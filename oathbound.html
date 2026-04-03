@@ -88,83 +88,101 @@
 <section class="project-section">
     <h2>Environment Concepts</h2>
 
-    <div class="ui-grid">
-        <p>First concept for tutorial art</p>
-        <div class="ui-card">
+    <div class="gallery-container">
+
+        <div class="gallery-item">
             <img src="images/tutorial_concept.png" onclick="openModal(this)">
+            <p>First concept for tutorial art</p>
         </div>
-        <p>Concepts for watchtower)</p>
-        <div class="ui-card">
+
+        <div class="gallery-item">
             <img src="images/watchtower.png" onclick="openModal(this)">
+            <p>Concepts for watchtower</p>
         </div>
-        <p>Finalized tutorial art</p>
-        <div class="ui-card">
+
+        <div class="gallery-item">
             <img src="images/tutorial.jpg" onclick="openModal(this)">
+            <p>Finalized tutorial art</p>
         </div>
-        <p>First shape layout for main level (main level art in progress)</p>
-        <div class="ui-card">
+
+        <div class="gallery-item">
             <img src="images/shape_render.png" onclick="openModal(this)">
+            <p>First shape layout for main level</p>
         </div>
+
     </div>
 </section>
 
 <!-- Assets -->
 <section class="project-section">
-    <h2>3d Asset Concepts</h2>
+    <h2>3D Asset Concepts</h2>
 
-    <div class="ui-grid">
-        <p>First Draft Weapons</p>
-        <div class="ui-card">
+    <div class="gallery-container">
+
+        <div class="gallery-item">
             <img src="images/weapons.png" onclick="openModal(this)">
+            <p>First Draft Weapons</p>
         </div>
-        <p>Sword Angles</p>
-         <div class="ui-card">
+
+        <div class="gallery-item">
             <img src="images/sword1.png" onclick="openModal(this)">
+            <p>Sword Angles</p>
         </div>
-        <p>Finalized sword concept sheet</p>
-        <div class="ui-card">
+
+        <div class="gallery-item">
             <img src="images/final_sword.png" onclick="openModal(this)">
+            <p>Final Sword Concept Sheet</p>
         </div>
-        <p>Concept Sheet for Eye Camera</p>
-        <div class="ui-card">
+
+        <div class="gallery-item">
             <img src="images/eye1.jpg" onclick="openModal(this)">
+            <p>Eye Camera Concept</p>
         </div>
-        <p>New frame for Corner Camera</p>
-        <div class="ui-card">
+
+        <div class="gallery-item">
             <img src="images/eye2.jpg" onclick="openModal(this)">
+            <p>Corner Camera Frame</p>
         </div>
-        <p>Engraving example for Chest</p>
-        <div class="ui-card">
+
+        <div class="gallery-item">
             <img src="images/chest_og.png" onclick="openModal(this)">
+            <p>Chest Engraving Example</p>
         </div>
-        <p>Chest Engraving Concepts</p>
-        <div class="ui-card">
+
+        <div class="gallery-item">
             <img src="images/more chest concepts.png" onclick="openModal(this)">
+            <p>Chest Engraving Concepts</p>
         </div>
+
     </div>
 </section>
 
     <!-- Logo -->
 <section class="project-section">
-    <h2>Logo Concepts</h2>
+    <h2>Logo & Emblems</h2>
 
-    <div class="ui-grid">
-        <p>Logo Ideas</p>
-        <div class="ui-card">
+    <div class="gallery-container">
+
+        <div class="gallery-item">
             <img src="images/logo.png" onclick="openModal(this)">
+            <p>Logo Concept Design</p>
         </div>
-        <p>Logo Renders and Color Play</p>
-         <div class="ui-card">
+
+        <div class="gallery-item">
             <img src="images/logo_render.png" onclick="openModal(this)">
+            <p>Logo Color & Render (Color by Team Artist)</p>
         </div>
-        <p>Kingdom Emblems Draft 1</p>
-        <div class="ui-card">
+
+        <div class="gallery-item">
             <img src="images/emblems1.png" onclick="openModal(this)">
+            <p>Kingdom Emblems Draft 1</p>
         </div>
-        <p>Kingdom Emblems Draft 2</p>
-        <div class="ui-card">
+
+        <div class="gallery-item">
             <img src="images/emblems2.png" onclick="openModal(this)">
+            <p>Kingdom Emblems Draft 2</p>
         </div>
+
     </div>
 </section>
 
@@ -202,6 +220,46 @@
     <a href="sfts.html" class="nav-button">← Previous Project</a>
     <a href="nextproject.html" class="nav-button">Next Project →</a>
 </div>
+<div id="imageModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <span class="nav-arrow left" onclick="changeImage(-1)">&#10094;</span>
+  <img class="modal-content" id="modalImage">
+  <span class="nav-arrow right" onclick="changeImage(1)">&#10095;</span>
+  <p id="modalCaption"></p>
+</div>
 
+<script>
+let currentIndex = 0;
+let galleryImages = [];
+
+function openModal(imageElement) {
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  const modalCaption = document.getElementById('modalCaption');
+
+  galleryImages = Array.from(document.querySelectorAll(".gallery-item img"));
+  currentIndex = galleryImages.indexOf(imageElement);
+
+  modal.style.display = 'block';
+  modalImg.src = imageElement.src;
+  modalCaption.textContent = imageElement.alt;
+}
+
+function closeModal() {
+  document.getElementById('imageModal').style.display = 'none';
+}
+
+function changeImage(direction) {
+  currentIndex += direction;
+
+  if (currentIndex < 0) currentIndex = galleryImages.length - 1;
+  if (currentIndex >= galleryImages.length) currentIndex = 0;
+
+  const newImage = galleryImages[currentIndex];
+
+  document.getElementById('modalImage').src = newImage.src;
+  document.getElementById('modalCaption').textContent = newImage.alt;
+}
+</script>
 </body>
 </html>
