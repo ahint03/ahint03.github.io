@@ -960,3 +960,18 @@ p {
     background-color: #666;
     color: white;
 }
+
+.code-block {
+    background-color: #1e2228;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: left;
+    overflow-x: auto;
+}
+
+.code-block code {
+    color: #46c0d9;
+    font-family: monospace;
+    font-size: 0.9rem;
+}
