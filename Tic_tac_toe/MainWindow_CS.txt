@@ -1,0 +1,125 @@
+using System;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+
+namespace Project2
+{
+    public partial class MainWindow : Window
+    {
+        private UltimateBoard ultimateBoard;
+        private bool playerTurn = true; // true = X (Player), false = O (Computer)
+        private Random random = new Random();
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            Loaded += MainWindow_Loaded;
+            StartNewGame();
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            ShowInstructions();
+        }
+
+        private void ShowInstructions()
+        {
+            MessageBox.Show(
+                "Welcome to Ultimate Tic Tac Toe!\n\n" +
+                "How to play:\n" +
+                "• The big board contains 9 smaller tic tac toe boards.\n" +
+                "• On your turn, place your mark (X).\n" +
+                "• The spot you choose inside a small board determines which small board your opponent must play in next.\n" +
+                "• If that board is already full or won, the next player gets a free move anywhere.\n" +
+                "• Win 3 small boards in a row on the big board to win the game.\n\n" +
+                "You are X. The computer is O.\n\n" +
+                "Good luck and have fun!",
+                "How to Play",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
+        }
+
+        private void StartNewGame()
+        {
+            ultimateBoard = new UltimateBoard(BigBoard, Cell_Click);
+            playerTurn = true;
+            TurnText.Text = "Turn: X";
+        }
+
+        private void Cell_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            if (button == null || button.Content != null || !ultimateBoard.IsMoveValid(button))
+                return;
+
+            if (playerTurn)
+            {
+                button.Content = "X";
+                button.Background = Brushes.LightSkyBlue;
+                button.Foreground = Brushes.White;
+            }
+            else
+            {
+                button.Content = "O";
+                button.Background = Brushes.LightPink;
+                button.Foreground = Brushes.White;
+            }
+
+            ultimateBoard.ProcessMove(button, playerTurn ? "X" : "O");
+
+            var winner = ultimateBoard.GetBigWinner();
+            if (winner != null)
+            {
+                ultimateBoard.DisableAllBoards();
+
+                if (winner == "X")
+                {
+                    if (MessageBox.Show("You win! 🎉\nPlay again?", "Victory", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    {
+                        StartNewGame();
+                    }
+                }
+                else if (winner == "O")
+                {
+                    if (MessageBox.Show("You lose! 😔\nPlay again?", "Defeat", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                    {
+                        StartNewGame();
+                    }
+                }
+                return;
+            }
+
+            playerTurn = !playerTurn;
+            TurnText.Text = $"Turn: {(playerTurn ? "X" : "O")}";
+
+            if (!playerTurn)
+            {
+                ComputerMove();
+            }
+        }
+
+        private void ComputerMove()
+        {
+            var move = ultimateBoard.GetRandomMove();
+            if (move != null)
+            {
+                move.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            }
+        }
+
+        private void NewGameButton_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure you want to start a new game?", "Confirm", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                StartNewGame();
+            }
+        }
+
+        private void InstructionsButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShowInstructions();
+        }
+    }
+}

@@ -1,0 +1,158 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Project1.Index" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Blackjack Casino</title>
+    <style>
+        body {
+            background: radial-gradient(circle, #005500, #002200);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            text-align: center;
+            padding-top: 30px;
+        }
+        .title {
+            font-size: 48px;
+            font-weight: bold;
+            color: gold;
+            text-shadow: 2px 2px 8px black;
+            margin-bottom: 30px;
+        }
+        .poker-table {
+            background: linear-gradient(#228B22, #006400);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 25px 8px black;
+            display: inline-block;
+            min-width: 500px;
+        }
+        .bet-buttons, .action-buttons {
+            margin: 20px 0;
+        }
+        .poker-button {
+            margin: 5px;
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(#ffffff, #d4d4d4);
+            color: black;
+            box-shadow: 2px 2px 8px #333;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .poker-button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(#ffeb3b, #ffc107);
+            color: #000;
+        }
+        .action-button {
+            margin: 8px;
+            padding: 12px 24px;
+            font-size: 20px;
+            border-radius: 10px;
+            background: linear-gradient(#ffffff, #d4d4d4);
+            color: black;
+            border: none;
+            box-shadow: 2px 2px 8px #333;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .action-button:disabled {
+         background: linear-gradient(#888, #555);
+        color: #ddd;
+        box-shadow: none;
+        transform: none;
+        cursor: not-allowed;
+        opacity: 0.7;
+         }
+        .action-button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(#ff7043, #e53935);
+            color: white;
+        }
+        .status-label, .money-label {
+            font-size: 26px;
+            margin: 10px 0;
+            display: block;
+            text-shadow: 1px 1px 3px black;
+        }
+        .card {
+            display: inline-block;
+            margin: 5px;
+            padding: 15px;
+            background: white;
+            color: black;
+            border-radius: 10px;
+            width: 60px;
+            height: 80px;
+            font-weight: bold;
+            font-size: 26px;
+            box-shadow: 3px 3px 10px #000;
+            vertical-align: middle;
+        }
+        .hand-container {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        
+        <div class="title">Blackjack Casino</div> 
+
+        <div class="poker-table">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+
+                   
+                    <asp:Label ID="lblMoney" runat="server" CssClass="money-label" Text="Money: $500" />
+                    <asp:Label ID="lblCurrentBet" runat="server" CssClass="status-label" Text="Current Bet: $0" />
+                    
+                    
+                    <div class="hand-container">
+                        <asp:Label ID="lblHand" runat="server" CssClass="status-label" Text="Your Hand:" />
+                        <br />
+                        <asp:Label ID="lblDealerHand" runat="server" CssClass="status-label" Text="Dealer's Hand:" />
+                    </div>
+
+                    
+                    <asp:Label ID="lblResult" runat="server" CssClass="status-label" Text="" />
+
+                   
+                    <div class="bet-buttons">
+                        <asp:Button ID="btn0" runat="server" Text="0" CssClass="poker-button" OnClick="NumberButton_Click" />
+                        <asp:Button ID="btn1" runat="server" Text="1" CssClass="poker-button" OnClick="NumberButton_Click" />
+                        <asp:Button ID="btn2" runat="server" Text="2" CssClass="poker-button" OnClick="NumberButton_Click" />
+                        <asp:Button ID="btn3" runat="server" Text="3" CssClass="poker-button" OnClick="NumberButton_Click" />
+                        <asp:Button ID="btn4" runat="server" Text="4" CssClass="poker-button" OnClick="NumberButton_Click" />
+                        <asp:Button ID="btn5" runat="server" Text="5" CssClass="poker-button" OnClick="NumberButton_Click" />
+                        <asp:Button ID="btn6" runat="server" Text="6" CssClass="poker-button" OnClick="NumberButton_Click" />
+                        <asp:Button ID="btn7" runat="server" Text="7" CssClass="poker-button" OnClick="NumberButton_Click" />
+                        <asp:Button ID="btn8" runat="server" Text="8" CssClass="poker-button" OnClick="NumberButton_Click" />
+                        <asp:Button ID="btn9" runat="server" Text="9" CssClass="poker-button" OnClick="NumberButton_Click" />
+                        <asp:Button ID="btnBackspace" runat="server" Text="⌫" CssClass="poker-button" OnClick="BackspaceButton_Click" />
+                    </div>
+
+                   
+                    <div class="action-buttons">
+                        <asp:Button ID="btnPlaceBet" runat="server" Text="Place Bet" CssClass="action-button" OnClick="PlaceBet_Click" />
+                        <asp:Button ID="btnHit" runat="server" Text="Hit" CssClass="action-button" OnClick="Hit_Click" />
+                        <asp:Button ID="btnStay" runat="server" Text="Stay" CssClass="action-button" OnClick="Stay_Click" />
+                        <asp:Button ID="btnNewGame" runat="server" Text="New Game" CssClass="action-button" OnClick="NewGame_Click" />
+                    </div>
+                    <div class="bet-buttons">
+                    <asp:Button ID="btnBet5" runat="server" Text="$5" CssClass="action-button" OnClick="QuickBet_Click" />
+                    <asp:Button ID="btnBet10" runat="server" Text="$10" CssClass="action-button" OnClick="QuickBet_Click" />
+                    <asp:Button ID="btnBet25" runat="server" Text="$25" CssClass="action-button" OnClick="QuickBet_Click" />
+                    <asp:Button ID="btnBet50" runat="server" Text="$50" CssClass="action-button" OnClick="QuickBet_Click" />
+</div>
+
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </form>
+</body>
+</html>

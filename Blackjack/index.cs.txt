@@ -1,0 +1,345 @@
+using System;
+using System.Collections.Generic;
+using System.Web.UI.WebControls;
+
+namespace Project1
+{
+    public partial class Index : System.Web.UI.Page
+    {
+        Random rng = new Random();
+        List<string> deck = new List<string>() { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                Session["Money"] = 500;
+                Session["CurrentBet"] = 0;
+                Session["PlayerHand"] = new List<string>();
+                Session["DealerHand"] = new List<string>();
+                Session["RoundActive"] = false;
+
+                lblHand.Text = "Your Hand:";
+                lblDealerHand.Text = "Dealer's Hand:";
+                lblResult.Text = "";
+
+                UpdateMoney();
+                UpdateBetLabel();
+
+                btnHit.Enabled = false;
+                btnStay.Enabled = false;
+                btnPlaceBet.Enabled = true;
+            }
+        }
+
+        protected void NumberButton_Click(object sender, EventArgs e)
+        {
+            if ((bool)Session["RoundActive"])
+                return;
+
+            Button btn = (Button)sender;
+            string digit = btn.Text;
+
+            int currentBet = Convert.ToInt32(Session["CurrentBet"]);
+            int money = Convert.ToInt32(Session["Money"]);
+
+            currentBet = currentBet * 10 + Convert.ToInt32(digit);
+
+            if (currentBet > money)
+            {
+                lblResult.Text = "Bet exceeds available money!";
+                return;
+            }
+
+            Session["CurrentBet"] = currentBet;
+            UpdateBetLabel();
+            lblResult.Text = "";
+        }
+
+        protected void BackspaceButton_Click(object sender, EventArgs e)
+        {
+            if ((bool)Session["RoundActive"])
+                return;
+
+            Button btn = (Button)sender; // kept casting sender for project requirement
+            int currentBet = Convert.ToInt32(Session["CurrentBet"]);
+            currentBet = currentBet / 10;
+            Session["CurrentBet"] = currentBet;
+
+            UpdateBetLabel();
+            lblResult.Text = "";
+        }
+
+        protected void QuickBet_Click(object sender, EventArgs e)
+        {
+            if ((bool)Session["RoundActive"])
+                return;
+
+            Button btn = (Button)sender;
+            string amountText = btn.Text.Replace("$", "");
+            int amount = Convert.ToInt32(amountText);
+
+            int money = Convert.ToInt32(Session["Money"]);
+            int currentBet = Convert.ToInt32(Session["CurrentBet"]);
+
+            if (currentBet + amount > money)
+            {
+                lblResult.Text = "Bet exceeds available money!";
+                return;
+            }
+
+            currentBet += amount;
+            Session["CurrentBet"] = currentBet;
+
+            UpdateBetLabel();
+            lblResult.Text = "";
+        }
+
+        protected void PlaceBet_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            if ((bool)Session["RoundActive"])
+                return;
+
+            int money = Convert.ToInt32(Session["Money"]);
+            int bet = Convert.ToInt32(Session["CurrentBet"]);
+
+            if (bet <= 0 || bet > money)
+            {
+                lblResult.Text = "Invalid Bet!";
+                return;
+            }
+
+            Session["PlayerHand"] = new List<string>();
+            Session["DealerHand"] = new List<string>();
+
+            DrawCard((List<string>)Session["PlayerHand"]);
+            DrawCard((List<string>)Session["PlayerHand"]);
+            DrawCard((List<string>)Session["DealerHand"]);
+            DrawCard((List<string>)Session["DealerHand"]);
+
+            Session["RoundActive"] = true;
+
+            UpdateHand();
+            UpdateDealerHand(false);
+
+            btnPlaceBet.Enabled = false;
+            btnHit.Enabled = true;
+            btnStay.Enabled = true;
+            lblResult.Text = "";
+        }
+
+        protected void Hit_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            if (!(bool)Session["RoundActive"])
+                return;
+
+            DrawCard((List<string>)Session["PlayerHand"]);
+            UpdateHand();
+        }
+
+        protected void Stay_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            if (!(bool)Session["RoundActive"])
+                return;
+
+            btnHit.Enabled = false;
+            btnStay.Enabled = false;
+
+            while (CalculateTotal((List<string>)Session["DealerHand"]) < 17)
+            {
+                DrawCard((List<string>)Session["DealerHand"]);
+            }
+
+            UpdateDealerHand(true);
+
+            int playerTotal = CalculateTotal((List<string>)Session["PlayerHand"]);
+            int dealerTotal = CalculateTotal((List<string>)Session["DealerHand"]);
+
+            if (dealerTotal > 21 || playerTotal > dealerTotal)
+            {
+                WinBet();
+                lblResult.Text = "You win! Dealer had " + dealerTotal + ".";
+            }
+            else if (playerTotal < dealerTotal)
+            {
+                LoseBet();
+                lblResult.Text = "You lose! Dealer had " + dealerTotal + ".";
+            }
+            else
+            {
+                lblResult.Text = "Push (tie)! Dealer also had " + dealerTotal + ".";
+            }
+
+            EndRound();
+        }
+
+        protected void NewGame_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            Session["Money"] = 500;
+            Session["CurrentBet"] = 0;
+            Session["PlayerHand"] = new List<string>();
+            Session["DealerHand"] = new List<string>();
+            Session["RoundActive"] = false;
+
+            lblHand.Text = "Your Hand:";
+            lblDealerHand.Text = "Dealer's Hand:";
+            lblResult.Text = "";
+
+            UpdateMoney();
+            UpdateBetLabel();
+
+            btnHit.Enabled = false;
+            btnStay.Enabled = false;
+            btnPlaceBet.Enabled = true;
+        }
+
+        private void DrawCard(List<string> hand)
+        {
+            string card = deck[rng.Next(deck.Count)];
+            hand.Add(card);
+        }
+
+        private void UpdateHand()
+        {
+            List<string> playerHand = (List<string>)Session["PlayerHand"];
+            int total = CalculateTotal(playerHand);
+
+            lblHand.Text = "Your Hand: ";
+            foreach (string card in playerHand)
+            {
+                lblHand.Text += "<span class='card'>" + card + "</span>";
+            }
+            lblHand.Text += "<br />Total: " + total;
+
+            if (total > 21)
+            {
+                LoseBet();
+                lblResult.Text = "Bust! You lost.";
+                UpdateDealerHand(true);
+                EndRound();
+            }
+            else if (total == 21)
+            {
+                lblResult.Text = "Blackjack! Press Stay.";
+                btnHit.Enabled = false;
+            }
+        }
+
+        private void UpdateDealerHand(bool showAll)
+        {
+            List<string> dealerHand = (List<string>)Session["DealerHand"];
+
+            lblDealerHand.Text = "Dealer's Hand: ";
+            for (int i = 0; i < dealerHand.Count; i++)
+            {
+                if (i == 0 || showAll)
+                    lblDealerHand.Text += "<span class='card'>" + dealerHand[i] + "</span>";
+                else
+                    lblDealerHand.Text += "<span class='card'>?</span>";
+            }
+
+            if (showAll)
+            {
+                int dealerTotal = CalculateTotal(dealerHand);
+                lblDealerHand.Text += "<br />Total: " + dealerTotal;
+            }
+        }
+
+        private int CalculateTotal(List<string> hand)
+        {
+            int total = 0;
+            int aceCount = 0;
+
+            foreach (string card in hand)
+            {
+                if (card == "J" || card == "Q" || card == "K")
+                {
+                    total += 10;
+                }
+                else if (card == "A")
+                {
+                    total += 11;
+                    aceCount++;
+                }
+                else
+                {
+                    total += Convert.ToInt32(card);
+                }
+            }
+
+            while (total > 21 && aceCount > 0)
+            {
+                total -= 10;
+                aceCount--;
+            }
+
+            return total;
+        }
+
+        private void LoseBet()
+        {
+            int money = Convert.ToInt32(Session["Money"]);
+            int bet = Convert.ToInt32(Session["CurrentBet"]);
+            money -= bet;
+            Session["Money"] = money;
+            UpdateMoney();
+        }
+
+        private void WinBet()
+        {
+            int money = Convert.ToInt32(Session["Money"]);
+            int bet = Convert.ToInt32(Session["CurrentBet"]);
+            money += bet;
+            Session["Money"] = money;
+            UpdateMoney();
+        }
+
+        private void UpdateMoney()
+        {
+            int money = Convert.ToInt32(Session["Money"]);
+            lblMoney.Text = "Money: $" + money;
+
+            if (money <= 0)
+            {
+                lblMoney.Text = "Money: $0 - Game Over!";
+                btnHit.Enabled = false;
+                btnStay.Enabled = false;
+                btnPlaceBet.Enabled = false;
+            }
+            else if (!(bool)Session["RoundActive"])
+            {
+                btnPlaceBet.Enabled = true;
+            }
+        }
+
+        private void UpdateBetLabel()
+        {
+            int currentBet = Convert.ToInt32(Session["CurrentBet"]);
+            lblCurrentBet.Text = "Current Bet: $" + currentBet;
+        }
+
+        private void EndRound()
+        {
+            Session["RoundActive"] = false;
+            Session["CurrentBet"] = 0;
+
+            UpdateBetLabel();
+
+            btnHit.Enabled = false;
+            btnStay.Enabled = false;
+
+            if (Convert.ToInt32(Session["Money"]) > 0)
+            {
+                btnPlaceBet.Enabled = true;
+            }
+        }
+    }
+}

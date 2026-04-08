@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Location</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url("background.jpg");
+        background-size: 80%;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    h1 {
+        margin-top: 0;
+    }
+
+    form {
+        margin-bottom: 10px;
+        margin-right: 70px;
+        display: flex;
+        flex-direction: column; 
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        margin-right: 70px; 
+    }
+
+    input {
+        width: calc(100% - 22px);
+        padding: 10px;
+        margin-bottom: 10px;
+        margin-right: 100px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        padding: 10px 20px;
+        border: none;
+        background-color: #4A97F4;
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+        
+    }
+
+    button:hover {
+        background-color: #F4B957;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Search Weather</h1>
+        <form id="weatherForm">
+            <label for="location">Enter Location (City, State):</label>
+            <input type="text" id="location" name="location" required>
+            <button type="submit">Get Weather</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('weatherForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const location = document.getElementById('location').value.trim();
+            
+           
+            const isValidLocation = /^[a-zA-Z\s,]+$/.test(location);
+            
+            if (isValidLocation) {
+                window.location.href = `forecast.html?location=${encodeURIComponent(location)}`;
+            } else {
+                alert('Please enter a valid location (City, State).');
+            }
+        });
+    </script>
+</body>
+</html>
