@@ -1,1 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Projects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+    <ul>
+        <li><a href="index.html#home">// home</a></li>
+        <li><a href="index.html#aboutme">// about me</a></li>
+        <li><a href="index.html#projects">// projects</a></li>
+        <li><a href="index.html#contact">// contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="project-hero">
+    <img src="images/web_hero.png" alt="Web Projects Hero">
+</section>
+
+<div class="hero-divider"></div>
+
+<!-- PROJECT INFO -->
+<section class="project-section">
+    <h2>Project Info</h2>
+
+    <div class="project-info-grid">
+        <div class="info-card">
+            <h3>Role</h3>
+            <p>Web Designer / Developer</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Focus</h3>
+            <p>UI/UX + Frontend</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Technologies</h3>
+            <p>HTML, CSS, JavaScript</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Projects</h3>
+            <p>5 Websites</p>
+        </div>
+    </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="project-section">
+    <h2>Overview</h2>
+    <div class="section-box">
+        <p>
+            This collection showcases a series of web design projects focused on
+            layout design, responsive interfaces, and interactive user experiences.
+            Each project explores different approaches to structure, styling, and
+            functionality while emphasizing usability and visual clarity.
+        </p>
+    </div>
+</section>
+
+<!-- ================= WEBSITE 1 ================= -->
+<section class="project-section">
+    <h2>Portfolio Website</h2>
+
+    <div class="section-box">
+        <p>
+            A personal portfolio website designed to present projects in a clean,
+            structured format. Focused on visual hierarchy, navigation, and
+            interactive elements.
+        </p>
+    </div>
+
+    <div class="video-container">
+        <video controls width="800">
+            <source src="videos/site1.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="code-block">
+<pre><code>
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+</code></pre>
+    </div>
+</section>
+
+<!-- ================= WEBSITE 2 ================= -->
+<section class="project-section">
+    <h2>Interactive Landing Page</h2>
+
+    <div class="section-box">
+        <p>
+            A landing page focused on animation and smooth transitions to guide
+            user interaction and engagement.
+        </p>
+    </div>
+
+    <div class="video-container">
+        <video controls width="800">
+            <source src="videos/site2.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="code-block">
+<pre><code>
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+</code></pre>
+    </div>
+</section>
+
+<!-- ================= WEBSITE 3 ================= -->
+<section class="project-section">
+    <h2>Gallery Website</h2>
+
+    <div class="section-box">
+        <p>
+            A gallery-focused site designed to display visual content with modal
+            interactions and responsive layouts.
+        </p>
+    </div>
+
+    <div class="video-container">
+        <video controls width="800">
+            <source src="videos/site3.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="code-block">
+<pre><code>
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+</code></pre>
+    </div>
+</section>
+
+<!-- ================= WEBSITE 4 ================= -->
+<section class="project-section">
+    <h2>Dashboard UI</h2>
+
+    <div class="section-box">
+        <p>
+            A dashboard interface focusing on layout organization and user
+            readability through structured panels and UI components.
+        </p>
+    </div>
+
+    <div class="video-container">
+        <video controls width="800">
+            <source src="videos/site4.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="code-block">
+<pre><code>
+.container {
+    display: flex;
+    gap: 20px;
+}
+</code></pre>
+    </div>
+</section>
+
+<!-- ================= WEBSITE 5 ================= -->
+<section class="project-section">
+    <h2>Experimental UI</h2>
+
+    <div class="section-box">
+        <p>
+            A design experiment exploring unconventional layouts and interactive
+            visual elements.
+        </p>
+    </div>
+
+    <div class="video-container">
+        <video controls width="800">
+            <source src="videos/site5.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="code-block">
+<pre><code>
+button:hover {
+    transform: scale(1.1);
+}
+</code></pre>
+    </div>
+</section>
+
+<!-- TOOLS -->
+<section class="project-section">
+    <h2>Tools Used</h2>
+    <ul class="tools-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Figma</li>
+        <li>VS Code</li>
+    </ul>
+</section>
+
+<!-- NAVIGATION -->
+<div class="project-navigation">
+    <a href="treasurehunt.html" class="nav-button">← Previous Project</a>
+    <a href="nextproject.html" class="nav-button">Next Project →</a>
+</div>
+
+<script>
+window.addEventListener("scroll", function() {
+    const nav = document.getElementById("navbar");
+    if (window.scrollY > 50) {
+        nav.classList.add("sticky");
+    } else {
+        nav.classList.remove("sticky");
+    }
+});
+</script>
+
+</body>
+</html>
