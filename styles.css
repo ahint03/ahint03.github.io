@@ -1120,6 +1120,10 @@ p {
     background-color: #46c0d9;
     color: #1e1e28;
 }
-.contact-card .cta-button {
+.contact-card a.cta-button {
     color: #1e1e28;
+}
+
+.contact-card a.cta-button.outline {
+    color: #46c0d9;
 }
