@@ -1120,3 +1120,6 @@ p {
     background-color: #46c0d9;
     color: #1e1e28;
 }
+.cta-button {
+    color: #1e1e28 !important;
+}
