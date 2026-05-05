@@ -998,16 +998,13 @@ p {
 
 /* SECTION */
 .contact-section {
-    padding: 70px 20px 60px 20px; /* shorter */
+    padding: 70px 20px 60px 20px;
     text-align: center;
-
-    /* STRONGER contrast */
     background-color: #2b3138;
-
     position: relative;
 }
 
-/* FULL WIDTH GLOW LINE */
+
 .contact-section::before {
     content: "";
     position: absolute;
@@ -1019,7 +1016,7 @@ p {
     box-shadow: 0 0 12px #46c0d9;
 }
 
-/* TITLE */
+
 .contact-section h2 {
     font-size: 36px;
     color: #46c0d9;
@@ -1032,7 +1029,7 @@ p {
     font-size: 0.95rem;
 }
 
-/* CARD LAYOUT */
+
 .contact-cards {
     display: flex;
     justify-content: center;
@@ -1040,13 +1037,13 @@ p {
     flex-wrap: wrap;
 }
 
-/* CARDS (wider + flatter) */
+
 .contact-card {
     background-color: #262b31;
     padding: 22px 26px;
     border-radius: 10px;
 
-    width: 420px;   /* wider */
+    width: 420px;   
     max-width: 90%;
 
     text-align: left;
@@ -1060,13 +1057,13 @@ p {
     transform: translateY(-4px);
 }
 
-/* REMOVE highlight border */
+
 .contact-card.highlight {
     border: none;
     box-shadow: 0 6px 14px rgba(0,0,0,0.35);
 }
 
-/* TEXT */
+
 .contact-card h3 {
     color: #46c0d9;
     margin-bottom: 10px;
@@ -1089,7 +1086,7 @@ p {
     text-decoration: underline;
 }
 
-/* BUTTONS */
+
 .cta-button {
     display: inline-block;
     margin-top: 12px;
